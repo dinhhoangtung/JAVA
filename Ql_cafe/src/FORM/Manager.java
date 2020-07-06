@@ -439,6 +439,7 @@ GridBagLayout layout = new GridBagLayout();
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton41.setBackground(new java.awt.Color(0, 153, 153));
+        jButton41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_20px.png"))); // NOI18N
         jButton41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton41ActionPerformed(evt);
@@ -545,6 +546,11 @@ GridBagLayout layout = new GridBagLayout();
 
         jButton35.setBackground(new java.awt.Color(0, 153, 153));
         jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_pencil_30px.png"))); // NOI18N
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton35ActionPerformed(evt);
+            }
+        });
 
         jButton42.setBackground(new java.awt.Color(0, 153, 153));
         jButton42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_trash_can_30px_1.png"))); // NOI18N
@@ -754,6 +760,7 @@ GridBagLayout layout = new GridBagLayout();
         });
 
         jButton37.setBackground(new java.awt.Color(102, 0, 0));
+        jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_20px.png"))); // NOI18N
 
         jButton38.setBackground(new java.awt.Color(102, 0, 0));
         jButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_30px_1.png"))); // NOI18N
@@ -899,12 +906,23 @@ GridBagLayout layout = new GridBagLayout();
         });
 
         jButton7.setBackground(new java.awt.Color(0, 51, 153));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_20px.png"))); // NOI18N
 
         jButton11.setBackground(new java.awt.Color(0, 51, 153));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_30px_1.png"))); // NOI18N
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setBackground(new java.awt.Color(0, 51, 153));
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_pencil_30px.png"))); // NOI18N
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton36.setBackground(new java.awt.Color(0, 51, 153));
         jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_trash_can_30px_1.png"))); // NOI18N
@@ -1202,24 +1220,49 @@ GridBagLayout layout = new GridBagLayout();
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
+         AddMonAn n = new AddMonAn();
+        n.setVisible(true);
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
         // TODO add your handling code here:
+        ThemThongTinLuongNV a = new ThemThongTinLuongNV();
+        a.setVisible(true);
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         // TODO add your handling code here:
+         SuaThongTinKhachHang n = new SuaThongTinKhachHang();
+        n.setVisible(true);
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
     // TODO add your handling code here:
     
         SuaThongTinNV asd = new SuaThongTinNV();
-        asd.NewScreen();
+        asd.setVisible(true);
         
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        AddKhachHang n = new AddKhachHang();
+        n.setVisible(true);
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+         SuaThongTinKhachHang n = new SuaThongTinKhachHang();
+        n.setVisible(true);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        // TODO add your handling code here:
+        SuaThongTinMonAn n = new SuaThongTinMonAn();
+        n.setVisible(true);
+    }//GEN-LAST:event_jButton35ActionPerformed
     
     /**
      * @param args the command line arguments
