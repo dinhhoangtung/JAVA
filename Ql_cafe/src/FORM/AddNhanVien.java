@@ -45,12 +45,12 @@ public class AddNhanVien extends javax.swing.JFrame {
 
         addNV = new javax.swing.JPanel();
         TenBenhNhan = new javax.swing.JLabel();
-        NS = new javax.swing.JLabel();
+        TriGiaLuong = new javax.swing.JLabel();
         DC = new javax.swing.JLabel();
         DT = new javax.swing.JLabel();
         GT = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
-        txtSDT = new javax.swing.JTextField();
+        txtTRiGiaLuong = new javax.swing.JTextField();
         txtGT = new javax.swing.JComboBox<>();
         Thêm = new javax.swing.JButton();
         txtTenNV = new javax.swing.JTextField();
@@ -63,6 +63,8 @@ public class AddNhanVien extends javax.swing.JFrame {
         txtNBD = new com.toedter.calendar.JDateChooser();
         Thoát = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
+        NS1 = new javax.swing.JLabel();
+        txtSDT1 = new javax.swing.JTextField();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -74,10 +76,10 @@ public class AddNhanVien extends javax.swing.JFrame {
         TenBenhNhan.setText("Tên nhân viên");
         addNV.add(TenBenhNhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 120, -1, -1));
 
-        NS.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        NS.setForeground(new java.awt.Color(255, 255, 255));
-        NS.setText("Ngày sinh :");
-        addNV.add(NS, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 162, -1, -1));
+        TriGiaLuong.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        TriGiaLuong.setForeground(new java.awt.Color(255, 255, 255));
+        TriGiaLuong.setText("Trị Giá Lương");
+        addNV.add(TriGiaLuong, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 30));
 
         DC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DC.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,12 +103,12 @@ public class AddNhanVien extends javax.swing.JFrame {
         });
         addNV.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 202, 27));
 
-        txtSDT.addActionListener(new java.awt.event.ActionListener() {
+        txtTRiGiaLuong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSDTActionPerformed(evt);
+                txtTRiGiaLuongActionPerformed(evt);
             }
         });
-        addNV.add(txtSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 202, 27));
+        addNV.add(txtTRiGiaLuong, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 202, 27));
 
         txtGT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ" }));
         txtGT.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +202,18 @@ public class AddNhanVien extends javax.swing.JFrame {
         });
         addNV.add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 100, 40));
 
+        NS1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        NS1.setForeground(new java.awt.Color(255, 255, 255));
+        NS1.setText("Ngày sinh :");
+        addNV.add(NS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 162, -1, -1));
+
+        txtSDT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSDT1ActionPerformed(evt);
+            }
+        });
+        addNV.add(txtSDT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 202, 27));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -219,9 +233,9 @@ public class AddNhanVien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txtSDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSDTActionPerformed
+    private void txtTRiGiaLuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTRiGiaLuongActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSDTActionPerformed
+    }//GEN-LAST:event_txtTRiGiaLuongActionPerformed
 
     private void ThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThêmActionPerformed
 //        // TODO add your handling code here:
@@ -232,7 +246,7 @@ public class AddNhanVien extends javax.swing.JFrame {
         row[2] = txtNS.getDateFormatString();
         row[3] = txtGT.getSelectedItem().toString();
         row[4] = txtCMND.getText();
-        row[5] = txtSDT.getText();
+        row[5] = txtTRiGiaLuong.getText();
         row[6] = txtEmail.getText();
         row[7] = txtNBD.getDateFormatString();
           // thêm  1 dòng mới vào  Defaultablemodel
@@ -245,7 +259,7 @@ public class AddNhanVien extends javax.swing.JFrame {
                 + "'"+txtGT.getSelectedItem().toString()+"',"
                 + "'"+df.format(txtNS.getDate())+"',"
                 + "'"+txtCMND.getText()+"',"
-                + "'"+txtSDT.getText()+"',"
+                + "'"+txtTRiGiaLuong.getText()+"',"
                 + "'"+txtEmail.getText()+"',"
                 + "'"+df.format(txtNBD.getDate())+"',"
                 + "'Đang làm việc',"
@@ -295,10 +309,14 @@ public class AddNhanVien extends javax.swing.JFrame {
         txtNS.setDateFormatString("");
         txtGT.getSelectedItem().toString();
         txtCMND.setText("");
-        txtSDT.setText("");
+        txtTRiGiaLuong.setText("");
         txtEmail.setText("");
         txtNBD.setDateFormatString("");
     }//GEN-LAST:event_ResetActionPerformed
+
+    private void txtSDT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSDT1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSDT1ActionPerformed
  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -381,11 +399,12 @@ public class AddNhanVien extends javax.swing.JFrame {
     private javax.swing.JLabel DT;
     private javax.swing.JLabel DT1;
     private javax.swing.JLabel GT;
-    private javax.swing.JLabel NS;
+    private javax.swing.JLabel NS1;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel TenBenhNhan;
     private javax.swing.JButton Thoát;
     private javax.swing.JButton Thêm;
+    private javax.swing.JLabel TriGiaLuong;
     private javax.swing.JPanel addNV;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
@@ -394,7 +413,8 @@ public class AddNhanVien extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> txtGT;
     private com.toedter.calendar.JDateChooser txtNBD;
     private com.toedter.calendar.JDateChooser txtNS;
-    private javax.swing.JTextField txtSDT;
+    private javax.swing.JTextField txtSDT1;
+    private javax.swing.JTextField txtTRiGiaLuong;
     private javax.swing.JTextField txtTenNV;
     // End of variables declaration//GEN-END:variables
 

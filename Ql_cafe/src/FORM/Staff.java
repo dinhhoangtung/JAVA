@@ -112,6 +112,7 @@ GridBagLayout layout = new GridBagLayout();
         HomeFun = new javax.swing.JButton();
         MenuFun = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        KhachHangFun = new javax.swing.JButton();
         Head = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -165,6 +166,17 @@ GridBagLayout layout = new GridBagLayout();
         jLabel20 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jButton41 = new javax.swing.JButton();
+        KhachHang = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbKH = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         jButton21.setText("jButton21");
 
@@ -209,12 +221,29 @@ GridBagLayout layout = new GridBagLayout();
                 MenuFunActionPerformed(evt);
             }
         });
-        function.add(MenuFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 130, 70));
+        function.add(MenuFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 130, 70));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         function.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, 60));
+
+        KhachHangFun.setBackground(new java.awt.Color(61, 29, 61));
+        KhachHangFun.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        KhachHangFun.setForeground(new java.awt.Color(255, 255, 255));
+        KhachHangFun.setText("Customer");
+        KhachHangFun.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        KhachHangFun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                KhachHangFunUserFunMouseClicked(evt);
+            }
+        });
+        KhachHangFun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KhachHangFunActionPerformed(evt);
+            }
+        });
+        function.add(KhachHangFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 130, 70));
 
         Staff.add(function, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 470));
 
@@ -627,6 +656,125 @@ GridBagLayout layout = new GridBagLayout();
 
         control.add(Menu, "card4");
 
+        KhachHang.setBackground(new java.awt.Color(0, 0, 153));
+        KhachHang.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jButton7.setBackground(new java.awt.Color(0, 51, 153));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_20px.png"))); // NOI18N
+
+        jButton11.setBackground(new java.awt.Color(0, 51, 153));
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_30px_1.png"))); // NOI18N
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setBackground(new java.awt.Color(0, 51, 153));
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_pencil_30px.png"))); // NOI18N
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton36.setBackground(new java.awt.Color(0, 51, 153));
+        jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_trash_can_30px_1.png"))); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("KHÁCH HÀNG");
+
+        jTextField5.setBackground(new java.awt.Color(86, 114, 168));
+        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
+
+        tbKH.setAutoCreateRowSorter(true);
+        tbKH.setBackground(new java.awt.Color(86, 114, 168));
+        tbKH.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Mã KH", "Tên KH", "Ngày Sinh", "Giới Tính", "CMND", "SĐT", "Email", "Ngày ĐK", "Loại KH", "Ghi Chú"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tbKH.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane4.setViewportView(tbKH);
+
+        jLabel10.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Search by :");
+
+        jComboBox2.setBackground(new java.awt.Color(0, 51, 153));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "STT", "Mã NV", "Tên NV" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout KhachHangLayout = new javax.swing.GroupLayout(KhachHang);
+        KhachHang.setLayout(KhachHangLayout);
+        KhachHangLayout.setHorizontalGroup(
+            KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(KhachHangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(KhachHangLayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(KhachHangLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KhachHangLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(196, 196, 196))
+        );
+        KhachHangLayout.setVerticalGroup(
+            KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(KhachHangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(KhachHangLayout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel10)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton7)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton36)
+                    .addComponent(jButton12)
+                    .addComponent(jButton11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        control.add(KhachHang, "card4");
+
         Staff.add(control, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 750, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -678,6 +826,31 @@ GridBagLayout layout = new GridBagLayout();
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void KhachHangFunUserFunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KhachHangFunUserFunMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KhachHangFunUserFunMouseClicked
+
+    private void KhachHangFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KhachHangFunActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KhachHangFunActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        AddKhachHang n = new AddKhachHang();
+        n.setVisible(true);
+
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        SuaThongTinKhachHang n = new SuaThongTinKhachHang();
+        n.setVisible(true);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -725,6 +898,8 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JPanel Head;
     private javax.swing.JPanel Home;
     private javax.swing.JButton HomeFun;
+    private javax.swing.JPanel KhachHang;
+    private javax.swing.JButton KhachHangFun;
     private javax.swing.JPanel Menu;
     private javax.swing.JButton MenuFun;
     private javax.swing.JPanel Staff;
@@ -732,6 +907,8 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JPanel function;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
@@ -756,10 +933,15 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
     private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -776,10 +958,13 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel picture;
+    private javax.swing.JTable tbKH;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }
