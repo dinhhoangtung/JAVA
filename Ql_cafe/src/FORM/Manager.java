@@ -189,17 +189,8 @@ GridBagLayout layout = new GridBagLayout();
         jButton42 = new javax.swing.JButton();
         Table = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        ItemTable = new javax.swing.JPanel();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        DrinksFun1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jButton43 = new javax.swing.JButton();
         jButton44 = new javax.swing.JButton();
         jButton45 = new javax.swing.JButton();
@@ -586,60 +577,18 @@ GridBagLayout layout = new GridBagLayout();
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Table");
 
-        javax.swing.GroupLayout TableLayout = new javax.swing.GroupLayout(Table);
-        Table.setLayout(TableLayout);
-        TableLayout.setHorizontalGroup(
-            TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TableLayout.createSequentialGroup()
-                .addContainerGap(204, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134))
-        );
-        TableLayout.setVerticalGroup(
-            TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5)
-        );
-
-        ItemTable.setBackground(new java.awt.Color(0, 153, 153));
-        ItemTable.setLayout(new java.awt.GridLayout(3, 3, 1, 4));
-
-        jButton25.setBackground(new java.awt.Color(153, 223, 223));
-        jButton25.setText("1");
-        ItemTable.add(jButton25);
-
-        jButton26.setBackground(new java.awt.Color(153, 223, 223));
-        jButton26.setText("2");
-        ItemTable.add(jButton26);
-
-        jButton28.setBackground(new java.awt.Color(153, 223, 223));
-        jButton28.setText("3");
-        ItemTable.add(jButton28);
-
-        jButton31.setBackground(new java.awt.Color(153, 223, 223));
-        jButton31.setText("4");
-        ItemTable.add(jButton31);
-
-        jButton27.setBackground(new java.awt.Color(153, 223, 223));
-        jButton27.setText("5");
-        ItemTable.add(jButton27);
-
-        jButton30.setBackground(new java.awt.Color(153, 223, 223));
-        jButton30.setText("6");
-        ItemTable.add(jButton30);
-
-        jButton29.setBackground(new java.awt.Color(153, 223, 223));
-        jButton29.setText("7");
-        ItemTable.add(jButton29);
-
-        jButton32.setBackground(new java.awt.Color(153, 223, 223));
-        jButton32.setText("8");
-        ItemTable.add(jButton32);
-
-        jButton33.setBackground(new java.awt.Color(153, 223, 223));
-        jButton33.setText("9");
-        ItemTable.add(jButton33);
-
-        DrinksFun1.setBackground(new java.awt.Color(0, 153, 153));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Số Bàn"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         jButton43.setBackground(new java.awt.Color(0, 153, 153));
         jButton43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_30px_1.png"))); // NOI18N
@@ -650,28 +599,39 @@ GridBagLayout layout = new GridBagLayout();
         jButton45.setBackground(new java.awt.Color(0, 153, 153));
         jButton45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_trash_can_30px_1.png"))); // NOI18N
 
-        javax.swing.GroupLayout DrinksFun1Layout = new javax.swing.GroupLayout(DrinksFun1);
-        DrinksFun1.setLayout(DrinksFun1Layout);
-        DrinksFun1Layout.setHorizontalGroup(
-            DrinksFun1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DrinksFun1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout TableLayout = new javax.swing.GroupLayout(Table);
+        Table.setLayout(TableLayout);
+        TableLayout.setHorizontalGroup(
+            TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TableLayout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton45, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton45, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
-        DrinksFun1Layout.setVerticalGroup(
-            DrinksFun1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DrinksFun1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DrinksFun1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton45)
-                    .addComponent(jButton44)
-                    .addComponent(jButton43))
-                .addGap(27, 27, 27))
+        TableLayout.setVerticalGroup(
+            TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TableLayout.createSequentialGroup()
+                .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TableLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel5))
+                    .addGroup(TableLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TableLayout.createSequentialGroup()
+                                .addComponent(jButton43)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton44)
+                                .addGap(19, 19, 19)
+                                .addComponent(jButton45))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
@@ -686,13 +646,7 @@ GridBagLayout layout = new GridBagLayout();
                         .addComponent(itemDrinks, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(DrinksFun, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(64, 64, 64))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MenuLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(ItemTable, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(DrinksFun1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(64, 64, 64)))
                 .addGap(91, 91, 91))
             .addGroup(MenuLayout.createSequentialGroup()
                 .addContainerGap()
@@ -713,11 +667,7 @@ GridBagLayout layout = new GridBagLayout();
                     .addComponent(itemDrinks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(DrinksFun1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ItemTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         control.add(Menu, "card4");
@@ -1316,12 +1266,10 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JButton CustomerFun;
     private javax.swing.JPanel Drinks;
     private javax.swing.JPanel DrinksFun;
-    private javax.swing.JPanel DrinksFun1;
     private javax.swing.JPanel Employee;
     private javax.swing.JPanel Head;
     private javax.swing.JPanel Home;
     private javax.swing.JButton HomeFun;
-    private javax.swing.JPanel ItemTable;
     private javax.swing.JPanel Menu;
     private javax.swing.JButton MenuFun;
     private javax.swing.JPanel Salary;
@@ -1351,16 +1299,7 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton35;
     private javax.swing.JButton jButton36;
@@ -1395,8 +1334,10 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JLabel jLabel9;
     private com.toedter.calendar.JMonthChooser jMonthChooser1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField5;

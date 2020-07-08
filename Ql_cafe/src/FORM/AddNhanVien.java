@@ -135,7 +135,7 @@ public class AddNhanVien extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(61, 29, 61));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Handwriting", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Thêm Nhân Viên");
 
@@ -144,18 +144,16 @@ public class AddNhanVien extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(216, Short.MAX_VALUE)
+                .addContainerGap(199, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(196, 196, 196))
+                .addGap(163, 163, 163))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
         );
 
-        addNV.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 660, -1));
+        addNV.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 0, 610, -1));
 
         DT1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DT1.setForeground(new java.awt.Color(255, 255, 255));
