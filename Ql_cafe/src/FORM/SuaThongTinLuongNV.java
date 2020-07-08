@@ -33,10 +33,8 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        MANV = new javax.swing.JLabel();
         TenNV = new javax.swing.JLabel();
         Gioitinh = new javax.swing.JLabel();
-        txtMaNV = new javax.swing.JTextField();
         txtGioitinh = new javax.swing.JComboBox<>();
         txtTenNV = new javax.swing.JTextField();
         Ngaybatdau = new javax.swing.JLabel();
@@ -49,8 +47,6 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
         txtBoPhan = new javax.swing.JTextField();
         Luong = new javax.swing.JLabel();
         txtLuong = new javax.swing.JTextField();
-        Ghichu = new javax.swing.JLabel();
-        txtGhichu = new javax.swing.JTextField();
         Sua = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
         Thoát = new javax.swing.JButton();
@@ -83,13 +79,6 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        MANV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        MANV.setForeground(new java.awt.Color(255, 255, 255));
-        MANV.setText("Mã NV");
-        MANV.setMaximumSize(new java.awt.Dimension(91, 17));
-        MANV.setMinimumSize(new java.awt.Dimension(91, 17));
-        MANV.setPreferredSize(new java.awt.Dimension(91, 17));
 
         TenNV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         TenNV.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,10 +133,6 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
         Luong.setForeground(new java.awt.Color(255, 255, 255));
         Luong.setText("Lương");
 
-        Ghichu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Ghichu.setForeground(new java.awt.Color(255, 255, 255));
-        Ghichu.setText("Ghi chú");
-
         Sua.setBackground(new java.awt.Color(61, 29, 61));
         Sua.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Sua.setText("Sửa");
@@ -188,15 +173,13 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Thoigian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Ngaybatdau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Gioitinh, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                    .addComponent(MANV, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Gioitinh, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtGioitinh, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNgayBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtThoigian, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(TenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Sogiolamviec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -211,18 +194,12 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Ghichu, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtGhichu, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Sua, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
-                        .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84)
-                        .addComponent(Thoát, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Sua, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addComponent(Thoát, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,11 +208,7 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtMaNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MANV, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(TenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,11 +236,7 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtGhichu, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                    .addComponent(Ghichu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Thoát, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,7 +282,7 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
     private void SuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaActionPerformed
         // TODO add your handling code here:
         String row[]= new String[9];
-        row[0]= txtMaNV.getText();
+       // row[0]= txtMaNV.getText();
         row[2]=txtTenNV.getText();
         row[3]=txtGioitinh.getSelectedItem().toString();
         row[4]=txtNgayBD.getDateFormatString();
@@ -321,29 +290,29 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
         row[6]=txtSogiolamviec.getText();
         row[7]=txtBoPhan.getText();
         row[8]=txtLuong.getText();
-        row[9]=txtGhichu.getText();
-        if(txtMaNV.getText().equals("") || txtTenNV.getText().equals("") || txtGioitinh.getSelectedItem().toString().equals("")
-            || txtNgayBD.getDateFormatString().equals("") || txtThoigian.getText().equals("") || txtSogiolamviec.getText().equals("") ||
-            txtBoPhan.getText().equals("") || txtLuong.getText().equals(""))
-        {
-            JOptionPane.showMessageDialog(this, "Nhập thông tin lương nhân viên chưa đầy đủ");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Sửa thông tin lương nhân viên thành công");
-        }
+       // row[9]=txtGhichu.getText();
+//       if(txtMaNV.getText().equals("") || txtTenNV.getText().equals("") || txtGioitinh.getSelectedItem().toString().equals("")
+//            || txtNgayBD.getDateFormatString().equals("") || txtThoigian.getText().equals("") || txtSogiolamviec.getText().equals("") ||
+//            txtBoPhan.getText().equals("") || txtLuong.getText().equals(""))
+//        {
+//            JOptionPane.showMessageDialog(this, "Nhập thông tin lương nhân viên chưa đầy đủ");
+//        }
+//        else
+//        {
+//            JOptionPane.showMessageDialog(this, "Sửa thông tin lương nhân viên thành công");
+//        }
     }//GEN-LAST:event_SuaActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         // TODO add your handling code here:
-        txtMaNV.setText("");
+      //  txtMaNV.setText("");
         txtTenNV.setText("");
         txtGioitinh.setSelectedItem("");
         txtNgayBD.setDateFormatString("");
         txtThoigian.setText("");
         txtSogiolamviec.setText("");
         txtLuong.setText("");
-        txtGhichu.setText("");
+      //  txtGhichu.setText("");
     }//GEN-LAST:event_ResetActionPerformed
 
     private void ThoátActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThoátActionPerformed
@@ -388,10 +357,8 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bophan;
-    private javax.swing.JLabel Ghichu;
     private javax.swing.JLabel Gioitinh;
     private javax.swing.JLabel Luong;
-    private javax.swing.JLabel MANV;
     private javax.swing.JLabel Ngaybatdau;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel Sogiolamviec;
@@ -404,10 +371,8 @@ public class SuaThongTinLuongNV extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField txtBoPhan;
-    private javax.swing.JTextField txtGhichu;
     private javax.swing.JComboBox<String> txtGioitinh;
     private javax.swing.JTextField txtLuong;
-    private javax.swing.JTextField txtMaNV;
     private com.toedter.calendar.JDateChooser txtNgayBD;
     private javax.swing.JTextField txtSogiolamviec;
     private javax.swing.JTextField txtTenNV;

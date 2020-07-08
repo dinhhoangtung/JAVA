@@ -33,21 +33,14 @@ public class AddKhachHang extends javax.swing.JFrame {
 
         Gioitinh = new javax.swing.JPanel();
         txtGT = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        LoaiKH = new javax.swing.JLabel();
         DC = new javax.swing.JLabel();
         Thêm = new javax.swing.JButton();
-        CMNDKH = new javax.swing.JLabel();
         txtTenKH = new javax.swing.JTextField();
         EMAILKH = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        MaKhachHang = new javax.swing.JLabel();
-        txtMaKH = new javax.swing.JTextField();
         TenKhachHang = new javax.swing.JLabel();
         SDTKH = new javax.swing.JLabel();
-        Ghichu = new javax.swing.JLabel();
         txtNS = new com.toedter.calendar.JDateChooser();
         GT = new javax.swing.JLabel();
         txtNBD = new com.toedter.calendar.JDateChooser();
@@ -56,7 +49,6 @@ public class AddKhachHang extends javax.swing.JFrame {
         txtSDT = new javax.swing.JTextField();
         NSKH = new javax.swing.JLabel();
         Reset = new javax.swing.JButton();
-        txtCMND = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,11 +60,6 @@ public class AddKhachHang extends javax.swing.JFrame {
                 txtGTActionPerformed(evt);
             }
         });
-
-        LoaiKH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        LoaiKH.setForeground(new java.awt.Color(255, 255, 255));
-        LoaiKH.setText("Kiểu Khách Hàng");
-        LoaiKH.setToolTipText("");
 
         DC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DC.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,10 +76,6 @@ public class AddKhachHang extends javax.swing.JFrame {
             }
         });
 
-        CMNDKH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        CMNDKH.setForeground(new java.awt.Color(255, 255, 255));
-        CMNDKH.setText("CMND :");
-
         txtTenKH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTenKHActionPerformed(evt);
@@ -102,8 +85,6 @@ public class AddKhachHang extends javax.swing.JFrame {
         EMAILKH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         EMAILKH.setForeground(new java.awt.Color(255, 255, 255));
         EMAILKH.setText("Email :");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VIP", "NORMAL", " " }));
 
         jPanel2.setBackground(new java.awt.Color(61, 29, 61));
 
@@ -124,16 +105,6 @@ public class AddKhachHang extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
         );
 
-        MaKhachHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        MaKhachHang.setForeground(new java.awt.Color(255, 255, 255));
-        MaKhachHang.setText("Mã Khách Hàng");
-
-        txtMaKH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaKHActionPerformed(evt);
-            }
-        });
-
         TenKhachHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         TenKhachHang.setForeground(new java.awt.Color(255, 255, 255));
         TenKhachHang.setText("Tên Khách Hàng");
@@ -141,10 +112,6 @@ public class AddKhachHang extends javax.swing.JFrame {
         SDTKH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         SDTKH.setForeground(new java.awt.Color(255, 255, 255));
         SDTKH.setText("Điện thoại :");
-
-        Ghichu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Ghichu.setForeground(new java.awt.Color(255, 255, 255));
-        Ghichu.setText("Ghi Chú");
 
         GT.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         GT.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,12 +158,6 @@ public class AddKhachHang extends javax.swing.JFrame {
             }
         });
 
-        txtCMND.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCMNDActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout GioitinhLayout = new javax.swing.GroupLayout(Gioitinh);
         Gioitinh.setLayout(GioitinhLayout);
         GioitinhLayout.setHorizontalGroup(
@@ -208,35 +169,16 @@ public class AddKhachHang extends javax.swing.JFrame {
             .addGroup(GioitinhLayout.createSequentialGroup()
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GioitinhLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(GT)
+                        .addGap(25, 25, 25)
+                        .addComponent(txtGT, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                         .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GioitinhLayout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(GT)
-                                .addGap(25, 25, 25))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GioitinhLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(MaKhachHang)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(GioitinhLayout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(LoaiKH, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GioitinhLayout.createSequentialGroup()
-                                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCMND, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(GioitinhLayout.createSequentialGroup()
-                                        .addComponent(txtGT, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(105, 105, 105)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DC)
-                                    .addComponent(TenKhachHang)
-                                    .addComponent(CMNDKH)
-                                    .addComponent(SDTKH))
-                                .addGap(18, 18, 18))))
+                            .addComponent(DC)
+                            .addComponent(TenKhachHang)
+                            .addComponent(SDTKH))
+                        .addGap(18, 18, 18))
                     .addGroup(GioitinhLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,22 +195,14 @@ public class AddKhachHang extends javax.swing.JFrame {
                         .addGap(18, 18, Short.MAX_VALUE)))
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GioitinhLayout.createSequentialGroup()
-                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(GioitinhLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73)
-                        .addComponent(Thoát, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(GioitinhLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Ghichu, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(Thoát, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(143, 143, 143))
         );
         GioitinhLayout.setVerticalGroup(
@@ -278,12 +212,9 @@ public class AddKhachHang extends javax.swing.JFrame {
                     .addGroup(GioitinhLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTenKH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtCMND, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TenKhachHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(MaKhachHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(TenKhachHang))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(GT)
@@ -293,10 +224,7 @@ public class AddKhachHang extends javax.swing.JFrame {
                     .addComponent(txtNBD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NSKH)
-                        .addComponent(CMNDKH)
-                        .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NSKH)
                     .addComponent(txtNS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -304,15 +232,7 @@ public class AddKhachHang extends javax.swing.JFrame {
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SDTKH)
                     .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LoaiKH, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-                    .addComponent(Ghichu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Thêm, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,11 +265,11 @@ public class AddKhachHang extends javax.swing.JFrame {
         //        // TODO add your handling code here:
         String row[] = new String[8];
         // lấy giá trị ở TextFiel để đưa vào mảng
-        row[0] = txtMaKH.getText();
+
         row[1] = txtTenKH.getText();
         row[2] = txtNS.getDateFormatString();
         row[3] = txtGT.getSelectedItem().toString();
-        row[4] = txtCMND.getText();
+   
         row[5] = txtSDT.getText();
         row[6] = txtEmail.getText();
         row[7] = txtNBD.getDateFormatString();
@@ -362,10 +282,6 @@ public class AddKhachHang extends javax.swing.JFrame {
     private void txtTenKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKHActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenKHActionPerformed
-
-    private void txtMaKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaKHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaKHActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
@@ -382,19 +298,15 @@ public class AddKhachHang extends javax.swing.JFrame {
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         // TODO add your handling code here:
-        txtMaKH.setText("");
+        
         txtTenKH.setText("");
         txtNS.setDateFormatString("");
         txtGT.getSelectedItem().toString();
-        txtCMND.setText("");
+        
         txtSDT.setText("");
         txtEmail.setText("");
         txtNBD.setDateFormatString("");
     }//GEN-LAST:event_ResetActionPerformed
-
-    private void txtCMNDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCMNDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCMNDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -432,28 +344,20 @@ public class AddKhachHang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CMNDKH;
     private javax.swing.JLabel DC;
     private javax.swing.JLabel EMAILKH;
     private javax.swing.JLabel GT;
-    private javax.swing.JLabel Ghichu;
     private javax.swing.JPanel Gioitinh;
-    private javax.swing.JLabel LoaiKH;
-    private javax.swing.JLabel MaKhachHang;
     private javax.swing.JLabel NSKH;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel SDTKH;
     private javax.swing.JLabel TenKhachHang;
     private javax.swing.JButton Thoát;
     private javax.swing.JButton Thêm;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField txtCMND;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JComboBox<String> txtGT;
-    private javax.swing.JTextField txtMaKH;
     private com.toedter.calendar.JDateChooser txtNBD;
     private com.toedter.calendar.JDateChooser txtNS;
     private javax.swing.JTextField txtSDT;

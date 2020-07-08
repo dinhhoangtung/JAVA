@@ -36,7 +36,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         addNV = new javax.swing.JPanel();
-        MaNhanvien = new javax.swing.JLabel();
         TenBenhNhan = new javax.swing.JLabel();
         NS = new javax.swing.JLabel();
         DC = new javax.swing.JLabel();
@@ -47,7 +46,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
         txtGT = new javax.swing.JComboBox<>();
         Sửa = new javax.swing.JButton();
         txtTenNV = new javax.swing.JTextField();
-        txtMaNV = new javax.swing.JTextField();
         DT1 = new javax.swing.JLabel();
         txtCMND = new javax.swing.JTextField();
         CMND = new javax.swing.JLabel();
@@ -82,11 +80,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
 
         addNV.setBackground(new java.awt.Color(91, 48, 91));
         addNV.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        MaNhanvien.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        MaNhanvien.setForeground(new java.awt.Color(255, 255, 255));
-        MaNhanvien.setText("Mã Nhân Viên :");
-        addNV.add(MaNhanvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         TenBenhNhan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         TenBenhNhan.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,13 +145,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
             }
         });
         addNV.add(txtTenNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 202, 27));
-
-        txtMaNV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaNVActionPerformed(evt);
-            }
-        });
-        addNV.add(txtMaNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 117, 202, 27));
 
         DT1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DT1.setForeground(new java.awt.Color(255, 255, 255));
@@ -265,7 +251,7 @@ public class SuaThongTinNV extends javax.swing.JFrame {
         //        // TODO add your handling code here:
         String row[] = new String[8];
         // lấy giá trị ở TextFiel để đưa vào mảng
-        row[0] = txtMaNV.getText();
+       // row[0] = txtMaNV.getText();
         row[1] = txtTenNV.getText();
         row[2] = txtNS.getDateFormatString();
         row[3] = txtGT.getSelectedItem().toString();
@@ -285,10 +271,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenNVActionPerformed
 
-    private void txtMaNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaNVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaNVActionPerformed
-
     private void txtCMNDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCMNDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCMNDActionPerformed
@@ -301,7 +283,7 @@ public class SuaThongTinNV extends javax.swing.JFrame {
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         // TODO add your handling code here:
-        txtMaNV.setText("");
+       // txtMaNV.setText("");
         txtTenNV.setText("");
         txtNS.setDateFormatString("");
         txtGT.getSelectedItem().toString();
@@ -352,7 +334,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
     private javax.swing.JLabel DT;
     private javax.swing.JLabel DT1;
     private javax.swing.JLabel GT;
-    private javax.swing.JLabel MaNhanvien;
     private javax.swing.JLabel NS;
     private javax.swing.JButton Reset;
     private javax.swing.JButton Sửa;
@@ -365,7 +346,6 @@ public class SuaThongTinNV extends javax.swing.JFrame {
     private javax.swing.JTextField txtCMND;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JComboBox<String> txtGT;
-    private javax.swing.JTextField txtMaNV;
     private com.toedter.calendar.JDateChooser txtNBD;
     private com.toedter.calendar.JDateChooser txtNS;
     private javax.swing.JTextField txtSDT;
