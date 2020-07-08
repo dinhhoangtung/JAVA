@@ -113,6 +113,7 @@ GridBagLayout layout = new GridBagLayout();
         MenuFun = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         KhachHangFun = new javax.swing.JButton();
+        ThemBan = new javax.swing.JButton();
         Head = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -177,6 +178,17 @@ GridBagLayout layout = new GridBagLayout();
         tbKH = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
+        Table = new javax.swing.JPanel();
+        jButton37 = new javax.swing.JButton();
+        jButton38 = new javax.swing.JButton();
+        jButton39 = new javax.swing.JButton();
+        jButton40 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tbKH1 = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
 
         jButton21.setText("jButton21");
 
@@ -221,7 +233,7 @@ GridBagLayout layout = new GridBagLayout();
                 MenuFunActionPerformed(evt);
             }
         });
-        function.add(MenuFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 130, 70));
+        function.add(MenuFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 130, 70));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -243,7 +255,24 @@ GridBagLayout layout = new GridBagLayout();
                 KhachHangFunActionPerformed(evt);
             }
         });
-        function.add(KhachHangFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 130, 70));
+        function.add(KhachHangFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 130, 70));
+
+        ThemBan.setBackground(new java.awt.Color(61, 29, 61));
+        ThemBan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ThemBan.setForeground(new java.awt.Color(255, 255, 255));
+        ThemBan.setText("Table");
+        ThemBan.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ThemBan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ThemBanUserFunMouseClicked(evt);
+            }
+        });
+        ThemBan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ThemBanActionPerformed(evt);
+            }
+        });
+        function.add(ThemBan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 130, 70));
 
         Staff.add(function, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 470));
 
@@ -775,6 +804,132 @@ GridBagLayout layout = new GridBagLayout();
 
         control.add(KhachHang, "card4");
 
+        Table.setBackground(new java.awt.Color(0, 0, 153));
+        Table.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jButton37.setBackground(new java.awt.Color(0, 51, 153));
+        jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_20px.png"))); // NOI18N
+
+        jButton38.setBackground(new java.awt.Color(0, 51, 153));
+        jButton38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_30px_1.png"))); // NOI18N
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton38ActionPerformed(evt);
+            }
+        });
+
+        jButton39.setBackground(new java.awt.Color(0, 51, 153));
+        jButton39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_pencil_30px.png"))); // NOI18N
+        jButton39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton39ActionPerformed(evt);
+            }
+        });
+
+        jButton40.setBackground(new java.awt.Color(0, 51, 153));
+        jButton40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_trash_can_30px_1.png"))); // NOI18N
+
+        jLabel12.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Table");
+
+        jTextField6.setBackground(new java.awt.Color(86, 114, 168));
+        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
+
+        tbKH1.setAutoCreateRowSorter(true);
+        tbKH1.setBackground(new java.awt.Color(240, 240, 240));
+        tbKH1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Số Bàn", "Ngày", "Giờ"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tbKH1.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane5.setViewportView(tbKH1);
+
+        jLabel13.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Search by :");
+
+        jComboBox4.setBackground(new java.awt.Color(0, 51, 153));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "STT", "Mã NV", "Tên NV" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TableLayout = new javax.swing.GroupLayout(Table);
+        Table.setLayout(TableLayout);
+        TableLayout.setHorizontalGroup(
+            TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TableLayout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(TableLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton38, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(286, 286, 286))
+        );
+        TableLayout.setVerticalGroup(
+            TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TableLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton37)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton40)
+                    .addComponent(jButton39)
+                    .addComponent(jButton38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        control.add(Table, "card4");
+
         Staff.add(control, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 750, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -851,6 +1006,26 @@ GridBagLayout layout = new GridBagLayout();
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void ThemBanUserFunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThemBanUserFunMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ThemBanUserFunMouseClicked
+
+    private void ThemBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemBanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ThemBanActionPerformed
+
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton38ActionPerformed
+
+    private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton39ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -903,6 +1078,8 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JPanel Menu;
     private javax.swing.JButton MenuFun;
     private javax.swing.JPanel Staff;
+    private javax.swing.JPanel Table;
+    private javax.swing.JButton ThemBan;
     private javax.swing.JPanel control;
     private javax.swing.JPanel function;
     private javax.swing.JButton jButton1;
@@ -934,14 +1111,21 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton35;
     private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
+    private javax.swing.JButton jButton38;
+    private javax.swing.JButton jButton39;
+    private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -959,12 +1143,15 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel picture;
     private javax.swing.JTable tbKH;
+    private javax.swing.JTable tbKH1;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }
