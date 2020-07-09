@@ -11,29 +11,32 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author Thang Mi
  */
 public class ConnectDB {
 
-    public static Connection dbConnector() throws SQLException {
+    
+    public static String DB_URL = "jdbc:mysql://localhost:3306/java";
+    public static String USER_NAME = "root";
+    public static String PASSWORD = "";
+    
+    
+    public static Connection getConnection(String dbURL, String userName, 
+            String password) {
         Connection conn = null;
-        
-            // db parameters
-            String url = "jdbc:mysql://localhost:3306/qlcafe";
-            String Username = "root";
-            String Password = "";
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-           } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConnectDB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-           }
-            // create a connection to the database
-            conn = (Connection)DriverManager.getConnection(url,Username,Password);
-            
-            System.out.println("Connection to SQLite has been established.");
-        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(dbURL, userName, password);
+            System.out.println("connect successfully!");
+        } catch (Exception ex) {
+            System.out.println("connect failure!");
+            ex.printStackTrace();
+        }
         return conn;
     }
     /**

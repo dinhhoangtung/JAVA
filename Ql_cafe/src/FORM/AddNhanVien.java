@@ -239,49 +239,50 @@ public class AddNhanVien extends javax.swing.JFrame {
 
     private void ThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThêmActionPerformed
 //        // TODO add your handling code here:
-        String row[] = new String[8];
-        // lấy giá trị ở TextFiel để đưa vào mảng
-    
-        row[1] = txtTenNV.getText();
-        row[2] = txtNS.getDateFormatString();
-        row[3] = txtGT.getSelectedItem().toString();
-        row[4] = txtCMND.getText();
-        row[5] = txtTRiGiaLuong.getText();
-        row[6] = txtEmail.getText();
-        row[7] = txtNBD.getDateFormatString();
-          // thêm  1 dòng mới vào  Defaultablemodel
-        //DefaultTableModel TableBn = (DefaultTableModel) tbNhanVien.getModel();
-        //TableBn.addRow(row);
-        final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String sql = "INSERT INTO NHANVIEN(MANV, TENNV, GIOITINH, NGAYSINH, CMND, SDT, EMAIL, NGAYBATDAU, TRANGTHAI, GHICHU) VALUES("
-                + "'',"
-                + "'"+txtTenNV.getText()+"',"
-                + "'"+txtGT.getSelectedItem().toString()+"',"
-                + "'"+df.format(txtNS.getDate())+"',"
-                + "'"+txtCMND.getText()+"',"
-                + "'"+txtTRiGiaLuong.getText()+"',"
-                + "'"+txtEmail.getText()+"',"
-                + "'"+df.format(txtNBD.getDate())+"',"
-                + "'Đang làm việc',"
-                + "'')";
-        try {
-            Connection con = new ConnectDB().dbConnector();
-            Statement pstmt = (Statement) con.createStatement();
-            pstmt.executeUpdate(sql);
-//            pstmt.setString(1, txtMaBN.getText());
-//            pstmt.setString(2, txtTenBN.getText());
-//            pstmt.setString(3, txtNgaySinhBN.getText());
-//            pstmt.setString(4, txtDiaChi.getText());
-//            pstmt.setString(5, txtSDT.getText());
-//            pstmt.setString(6, selectGioiTinh.getSelectedItem().toString());
-//            pstmt.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công!");
-            con.close();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Thêm nhân viên không thành công!");
-        }
-        System.out.println(sql);
+
+//        String row[] = new String[8];
+//        // lấy giá trị ở TextFiel để đưa vào mảng
+//    
+//        row[1] = txtTenNV.getText();
+//        row[2] = txtNS.getDateFormatString();
+//        row[3] = txtGT.getSelectedItem().toString();
+//        row[4] = txtCMND.getText();
+//        row[5] = txtSDT.getText();
+//        row[6] = txtEmail.getText();
+//        row[7] = txtNBD.getDateFormatString();
+//          // thêm  1 dòng mới vào  Defaultablemodel
+//        //DefaultTableModel TableBn = (DefaultTableModel) tbNhanVien.getModel();
+//        //TableBn.addRow(row);
+//        final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//        String sql = "INSERT INTO NHANVIEN(MANV, TENNV, GIOITINH, NGAYSINH, CMND, SDT, EMAIL, NGAYBATDAU, TRANGTHAI, GHICHU) VALUES("
+//                + "'',"
+//                + "'"+txtTenNV.getText()+"',"
+//                + "'"+txtGT.getSelectedItem().toString()+"',"
+//                + "'"+df.format(txtNS.getDate())+"',"
+//                + "'"+txtCMND.getText()+"',"
+//                + "'"+txtSDT.getText()+"',"
+//                + "'"+txtEmail.getText()+"',"
+//                + "'"+df.format(txtNBD.getDate())+"',"
+//                + "'Đang làm việc',"
+//                + "'')";
+//        try {
+//           // Connection con = new ConnectDB().dbConnector();
+//           // Statement pstmt = (Statement) con.createStatement();
+//          //  pstmt.executeUpdate(sql);
+////            pstmt.setString(1, txtMaBN.getText());
+////            pstmt.setString(2, txtTenBN.getText());
+////            pstmt.setString(3, txtNgaySinhBN.getText());
+////            pstmt.setString(4, txtDiaChi.getText());
+////            pstmt.setString(5, txtSDT.getText());
+////            pstmt.setString(6, selectGioiTinh.getSelectedItem().toString());
+////            pstmt.executeUpdate();
+//            JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công!");
+//           // con.close();
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//            JOptionPane.showMessageDialog(null, "Thêm nhân viên không thành công!");
+//        }
+//        System.out.println(sql);
     }//GEN-LAST:event_ThêmActionPerformed
 
     private void txtGTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGTActionPerformed

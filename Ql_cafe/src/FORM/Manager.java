@@ -34,95 +34,95 @@ GridBagLayout layout = new GridBagLayout();
      */
      public void TaoTableLuong() throws SQLException{
         //lấy dữ liệu từ mysql
-        Connection con = new ConnectDB().dbConnector();
-        ArrayList<Luong> list = new ArrayList();
-        String sqlString = "Select * from luong";
-        Statement start = (Statement) con.createStatement();
-        ResultSet rs = start.executeQuery(sqlString);
-        while(rs.next()){
-        Luong luong = new Luong();
-            luong.setMaNV(rs.getString("manv"));
-            luong.setTenNV(rs.getString("tennv"));
-            luong.setGioiTinh(rs.getString("gioitinh"));
-            luong.setNgayBD(rs.getDate("ngaybd"));
-            luong.setThoiGian(rs.getDate("thoigian"));
-            luong.setGioLamViec(rs.getString("giolamviec"));
-            luong.setBoPhan(rs.getString("bophan"));
-            luong.setLuong(rs.getString("luong"));
-            luong.setGhiChu(rs.getString("ghichu"));
-            list.add(luong);
-            System.out.println(luong);
-        }
-        rs.close();
-        start.close();
-        con.close();
-        //
-        DefaultTableModel tblModelTT = new DefaultTableModel();
-        tblModelTT = (DefaultTableModel) tbLuong.getModel();
-        for(var x: list)
-            tblModelTT.addRow(new Object[] {x.getMaNV(), x.getTenNV(), x.getGioiTinh(), x.getNgayBD(), x.getThoiGian(), x.getGioLamViec(), x.getBoPhan(), x.getLuong(), x.getGhiChu()} );
+//        Connection con = new ConnectDB().dbConnector();
+//        ArrayList<Luong> list = new ArrayList();
+//        String sqlString = "Select * from luong";
+//        Statement start = (Statement) con.createStatement();
+//        ResultSet rs = start.executeQuery(sqlString);
+//        while(rs.next()){
+//        Luong luong = new Luong();
+//            luong.setMaNV(rs.getString("manv"));
+//            luong.setTenNV(rs.getString("tennv"));
+//            luong.setGioiTinh(rs.getString("gioitinh"));
+//            luong.setNgayBD(rs.getDate("ngaybd"));
+//            luong.setThoiGian(rs.getDate("thoigian"));
+//            luong.setGioLamViec(rs.getString("giolamviec"));
+//            luong.setBoPhan(rs.getString("bophan"));
+//            luong.setLuong(rs.getString("luong"));
+//            luong.setGhiChu(rs.getString("ghichu"));
+//            list.add(luong);
+//            System.out.println(luong);
+//        }
+//        rs.close();
+//        start.close();
+//        con.close();
+//        //
+//        DefaultTableModel tblModelTT = new DefaultTableModel();
+//        tblModelTT = (DefaultTableModel) tbLuong.getModel();
+//        for(var x: list)
+//            tblModelTT.addRow(new Object[] {x.getMaNV(), x.getTenNV(), x.getGioiTinh(), x.getNgayBD(), x.getThoiGian(), x.getGioLamViec(), x.getBoPhan(), x.getLuong(), x.getGhiChu()} );
     };
     public void TaoTableNhanVien() throws SQLException{
         //lấy dữ liệu từ mysql
-        Connection con = new ConnectDB().dbConnector();
-        ArrayList<NhanVien> list = new ArrayList();
-        String sqlString = "Select * from nhanvien";
-        Statement start = (Statement) con.createStatement();
-        ResultSet rs = start.executeQuery(sqlString);
-        while(rs.next()){
-        NhanVien nv = new NhanVien();
-            nv.setMaNV(rs.getString("manv"));
-            nv.setTenNV(rs.getString("tennv"));
-            nv.setNgaySinh(rs.getDate("ngaysinh"));
-            nv.setGioiTinh(rs.getString("gioitinh"));
-            nv.setCMND(rs.getString("cmnd"));
-            nv.setSDT(rs.getString("sdt"));
-            nv.setEmail(rs.getString("email"));
-            nv.setNgayBatDau(rs.getDate("ngaybatdau"));
-            nv.setTrangThai(rs.getString("trangthai"));
-            nv.setGhiChu(rs.getString("ghichu"));
-            list.add(nv);
-            System.out.println(nv);
-        }
-        rs.close();
-        start.close();
-        con.close();
-        //
-        DefaultTableModel tblModelTT = new DefaultTableModel();
-        tblModelTT = (DefaultTableModel) tbNhanVien.getModel();
-        for(var x: list)
-            tblModelTT.addRow(new Object[] {x.getMaNV(), x.getTenNV(), x.getNgaySinh(), x.getGioiTinh(), x.getCMND(), x.getSDT(), x.getEmail(), x.getNgayBatDau(), x.getTrangThai(), x.getGhiChu()} );
+//        Connection con = new ConnectDB().dbConnector();
+//        ArrayList<NhanVien> list = new ArrayList();
+//        String sqlString = "Select * from nhanvien";
+//        Statement start = (Statement) con.createStatement();
+//        ResultSet rs = start.executeQuery(sqlString);
+//        while(rs.next()){
+//        NhanVien nv = new NhanVien();
+//            nv.setMaNV(rs.getString("manv"));
+//            nv.setTenNV(rs.getString("tennv"));
+//            nv.setNgaySinh(rs.getDate("ngaysinh"));
+//            nv.setGioiTinh(rs.getString("gioitinh"));
+//            nv.setCMND(rs.getString("cmnd"));
+//            nv.setSDT(rs.getString("sdt"));
+//            nv.setEmail(rs.getString("email"));
+//            nv.setNgayBatDau(rs.getDate("ngaybatdau"));
+//            nv.setTrangThai(rs.getString("trangthai"));
+//            nv.setGhiChu(rs.getString("ghichu"));
+//            list.add(nv);
+//            System.out.println(nv);
+//        }
+//        rs.close();
+//        start.close();
+//        con.close();
+//        //
+//        DefaultTableModel tblModelTT = new DefaultTableModel();
+//        tblModelTT = (DefaultTableModel) tbNhanVien.getModel();
+//        for(var x: list)
+//            tblModelTT.addRow(new Object[] {x.getMaNV(), x.getTenNV(), x.getNgaySinh(), x.getGioiTinh(), x.getCMND(), x.getSDT(), x.getEmail(), x.getNgayBatDau(), x.getTrangThai(), x.getGhiChu()} );
     };
     public void TaoTableKhackHang() throws SQLException{
         //lấy dữ liệu từ mysql
-        Connection con = new ConnectDB().dbConnector();
-        ArrayList<KhachHang> list = new ArrayList();
-        String sqlString = "Select * from khachhang";
-        Statement start = (Statement) con.createStatement();
-        ResultSet rs = start.executeQuery(sqlString);
-        while(rs.next()){
-        KhachHang kh = new KhachHang();
-            kh.setMaKH(rs.getString("makh"));
-            kh.setTenKH(rs.getString("tenkh"));
-            kh.setNgaySinh(rs.getDate("ngaysinh"));
-            kh.setGioiTinh(rs.getString("gioitinh"));
-            kh.setCMND(rs.getString("cmnd"));
-            kh.setSDT(rs.getString("sdt"));
-            kh.setEmail(rs.getString("email"));
-            kh.setNgayDK(rs.getDate("ngaydk"));
-            kh.setLoaiKH(rs.getString("loaikh"));
-            kh.setGhiChu(rs.getString("ghichu"));
-            list.add(kh);
-            System.out.println(kh);
-        }
-        rs.close();
-        start.close();
-        con.close();
-        //
-        DefaultTableModel tblModelTT = new DefaultTableModel();
-        tblModelTT = (DefaultTableModel) tbKH.getModel();
-        for(var x: list)
-            tblModelTT.addRow(new Object[] {x.getMaKH(), x.getTenKH(), x.getNgaySinh(), x.getGioiTinh(), x.getCMND(), x.getSDT(), x.getEmail(), x.getNgayDK(), x.getLoaiKH(), x.getGhiChu()} );
+//        Connection con = new ConnectDB().dbConnector();
+//        ArrayList<KhachHang> list = new ArrayList();
+//        String sqlString = "Select * from khachhang";
+//        Statement start = (Statement) con.createStatement();
+//        ResultSet rs = start.executeQuery(sqlString);
+//        while(rs.next()){
+//        KhachHang kh = new KhachHang();
+//            kh.setMaKH(rs.getString("makh"));
+//            kh.setTenKH(rs.getString("tenkh"));
+//            kh.setNgaySinh(rs.getDate("ngaysinh"));
+//            kh.setGioiTinh(rs.getString("gioitinh"));
+//            kh.setCMND(rs.getString("cmnd"));
+//            kh.setSDT(rs.getString("sdt"));
+//            kh.setEmail(rs.getString("email"));
+//            kh.setNgayDK(rs.getDate("ngaydk"));
+//            kh.setLoaiKH(rs.getString("loaikh"));
+//            kh.setGhiChu(rs.getString("ghichu"));
+//            list.add(kh);
+//            System.out.println(kh);
+//        }
+//        rs.close();
+//        start.close();
+//        con.close();
+//        //
+//        DefaultTableModel tblModelTT = new DefaultTableModel();
+//        tblModelTT = (DefaultTableModel) tbKH.getModel();
+//        for(var x: list)
+//            tblModelTT.addRow(new Object[] {x.getMaKH(), x.getTenKH(), x.getNgaySinh(), x.getGioiTinh(), x.getCMND(), x.getSDT(), x.getEmail(), x.getNgayDK(), x.getLoaiKH(), x.getGhiChu()} );
     };
     
     public Manager() throws SQLException {
