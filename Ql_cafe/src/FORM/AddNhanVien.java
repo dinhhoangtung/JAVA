@@ -243,16 +243,7 @@ public class AddNhanVien extends javax.swing.JFrame {
 
     private void ThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThêmActionPerformed
 //        // TODO add your handling code here:
- String row[] = new String[8];
-        // lấy giá trị ở TextFiel để đưa vào mảng
-        row[0]= txtTRiGiaLuong.getText();
-        row[1] = txtTenNV.getText();
-        row[2] = txtNS.getDateFormatString();
-        row[3] = txtGT.getSelectedItem().toString();
-        row[4] = txtCMND.getText();
-        row[5] = txtSDT.getText();
-        row[6] = txtEmail.getText();
-        row[7] = txtNBD.getDateFormatString();
+
     if (txtTRiGiaLuong.getText().isBlank())
     {
         JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
@@ -284,28 +275,15 @@ public class AddNhanVien extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
     }
-          int ad=0;
-          int check=0;
+   
        try {
             // connnect to database 'testdb'
             Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
             // crate statement
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = sts.executeQuery("select * from nhanvien where CMNDNV = '"+txtCMND.getText()+"' and SdtNV='"+txtSDT.getText()+"' and HoTenNV='"+txtTenNV.getText()+"'"
-            + " and NgaySinhNV='"+txtNS.getDateFormatString()+"' and GioiTinhNV='"+txtGT.getSelectedItem()+"' and EmailNV='"+txtCMND.getText()+"'"
-            + " and NgayBatDauNV='"+txtNBD.getDateFormatString()+"' and TriGiaLuongNV='"+txtTRiGiaLuong.getText()+"'");
-            while (rs.next()) {
-                check =1;
-                if(ad == rs.getInt((8))){
-                    JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công");
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
-                }
-                
-            }
+  sts.executeUpdate("INSERT INTO `nhanvien`(`HoTenNV`, `NgaySinhNV`, `GioiTinhNV`, `SdtNV`, `CMNDNV`, `EmailNV`, `NgayBatDauNV`, `MaNV`, `TriGiaLuongNV`) VALUES ("+txtTenNV.getText()+","+txtNS.getDateFormatString()+","+txtGT.getSelectedItem().toString()+","+txtSDT.getText()+","+txtCMND.getText()+","+txtEmail.getText()+","+txtNBD.getDateFormatString()+",null,"+txtTRiGiaLuong.getText()+")");
+          
             // close connection
             conn.close();
        }

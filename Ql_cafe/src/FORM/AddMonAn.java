@@ -202,12 +202,7 @@ public class AddMonAn extends javax.swing.JPanel {
 
     private void ThemmonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemmonActionPerformed
         // TODO add your handling code here:
-       String row[] = new String[4];
-       row[0]=txtTenMonAn.getText();
-       row[1]=txtSize.getText();
-       row[2]=txtGia.getText();
-     
-       final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+       
        if(txtTenMonAn.getText().equals("") || txtSize.getText().equals("") || txtGia.getText().equals(""))
        {
            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin");
@@ -216,25 +211,14 @@ public class AddMonAn extends javax.swing.JPanel {
        {
            JOptionPane.showMessageDialog(this, "Thêm món ăn thành công");
        }
-        int d = 1;
-        int check =0;
+      
         try {
         Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
             // crate statement
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = sts.executeQuery("select * from sanpham where TenSP = '"+txtTenMonAn.getText()+"' and SizeSP='"+txtSize.getText()+"' and GiaSP='"+txtGia.getText()+"' ");
-             while (rs.next()) {
-                check =1;
-                if(d == rs.getInt((8))){
-                    JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
-                }
-                
-            }
+           sts.executeUpdate("INSERT INTO `sanpham`(`TenSP`, `SizeSP`, `GiaSP`) VALUES ("+txtTenMonAn.getText()+","+txtSize.getText()+","+txtGia.getText()+")");
+             
         }
         catch(Exception ex)
         {

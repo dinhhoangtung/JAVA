@@ -41,7 +41,6 @@ public class AddKhachHang extends javax.swing.JFrame {
 
         Gioitinh = new javax.swing.JPanel();
         txtGT = new javax.swing.JComboBox<>();
-        DC = new javax.swing.JLabel();
         Thêm = new javax.swing.JButton();
         txtTenKH = new javax.swing.JTextField();
         EMAILKH = new javax.swing.JLabel();
@@ -51,7 +50,6 @@ public class AddKhachHang extends javax.swing.JFrame {
         SDTKH = new javax.swing.JLabel();
         txtNS = new com.toedter.calendar.JDateChooser();
         GT = new javax.swing.JLabel();
-        txtNBD = new com.toedter.calendar.JDateChooser();
         txtEmail = new javax.swing.JTextField();
         Thoát = new javax.swing.JButton();
         txtSDT = new javax.swing.JTextField();
@@ -68,10 +66,6 @@ public class AddKhachHang extends javax.swing.JFrame {
                 txtGTActionPerformed(evt);
             }
         });
-
-        DC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        DC.setForeground(new java.awt.Color(255, 255, 255));
-        DC.setText("Ngày Bắt Đầu :");
 
         Thêm.setBackground(new java.awt.Color(61, 29, 61));
         Thêm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -125,8 +119,6 @@ public class AddKhachHang extends javax.swing.JFrame {
         GT.setForeground(new java.awt.Color(255, 255, 255));
         GT.setText("Giới Tính :");
 
-        txtNBD.setDateFormatString("yyyy-MM-dd");
-
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -179,7 +171,6 @@ public class AddKhachHang extends javax.swing.JFrame {
                         .addComponent(txtGT, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                         .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DC)
                             .addComponent(TenKhachHang)
                             .addComponent(SDTKH))
                         .addGap(18, 18, 18))
@@ -198,8 +189,7 @@ public class AddKhachHang extends javax.swing.JFrame {
                         .addGap(18, 18, Short.MAX_VALUE)))
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNBD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GioitinhLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -216,20 +206,15 @@ public class AddKhachHang extends javax.swing.JFrame {
         GioitinhLayout.setVerticalGroup(
             GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(GioitinhLayout.createSequentialGroup()
-                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(GioitinhLayout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTenKH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TenKhachHang))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GT)
-                            .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtGT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(DC))))
-                    .addComponent(txtNBD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTenKH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TenKhachHang))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GT)
+                    .addComponent(txtGT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(GioitinhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NSKH)
@@ -302,27 +287,15 @@ public class AddKhachHang extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
     }
-        int ad=0;
-        int check=0;
+       
         try {
             // connnect to database 'testdb'
             Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
             // crate statement
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
-             ResultSet rs = sts.executeQuery("select * from khachhang where MaKH ='"+txtTenKH.getText()+"' and GioiTinhKH='"+txtGT.getSelectedItem()+"'"
-                     + "and NgaysinhKH='"+txtNS.getDateFormatString()+"' and SdtKH='"+txtSDT.getText()+"' and EmailKH='"+txtEmail.getText()+"' ");
-             while (rs.next()) {
-                check =1;
-                if(ad == rs.getInt((8))){
-                    JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
-                }
-                
-            }
+
+            sts.executeUpdate("INSERT INTO `khachhang`(`MaKH`, `GioiTinhKH`, `HoTenKH`, `NgaySinhKH`, `EmailKH`, `SdtKh`) VALUES (null,"+txtGT.getSelectedItem().toString()+","+txtTenKH.getText()+","+txtNS.getDateFormatString()+","+txtEmail.getText()+","+txtSDT.getText()+")");
         } catch (SQLException ex) {
             Logger.getLogger(AddKhachHang.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -355,7 +328,7 @@ public class AddKhachHang extends javax.swing.JFrame {
         
         txtSDT.setText("");
         txtEmail.setText("");
-        txtNBD.setDateFormatString("");
+    
         
     }//GEN-LAST:event_ResetActionPerformed
 
@@ -395,7 +368,6 @@ public class AddKhachHang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel DC;
     private javax.swing.JLabel EMAILKH;
     private javax.swing.JLabel GT;
     private javax.swing.JPanel Gioitinh;
@@ -409,7 +381,6 @@ public class AddKhachHang extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JComboBox<String> txtGT;
-    private com.toedter.calendar.JDateChooser txtNBD;
     private com.toedter.calendar.JDateChooser txtNS;
     private javax.swing.JTextField txtSDT;
     private javax.swing.JTextField txtTenKH;
