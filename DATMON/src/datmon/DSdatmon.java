@@ -26,7 +26,6 @@ DefaultTableModel tblModelTT;
         initComponents();
         setVisible(true);
         this.taoTable();
-     TableModel tableModel = tbMonAn .getModel();
    
     }
 

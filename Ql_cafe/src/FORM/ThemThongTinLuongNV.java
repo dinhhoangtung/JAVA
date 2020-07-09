@@ -37,8 +37,8 @@ public class ThemThongTinLuongNV extends javax.swing.JFrame {
         Them = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
         Thoát = new javax.swing.JButton();
-        SDT = new javax.swing.JLabel();
-        txtSDT = new javax.swing.JTextField();
+        MaNV = new javax.swing.JLabel();
+        txtMaNV = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,10 +98,10 @@ public class ThemThongTinLuongNV extends javax.swing.JFrame {
             }
         });
 
-        SDT.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        SDT.setForeground(new java.awt.Color(255, 255, 255));
-        SDT.setText("SĐT");
-        SDT.setToolTipText("");
+        MaNV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        MaNV.setForeground(new java.awt.Color(255, 255, 255));
+        MaNV.setText("MaNV");
+        MaNV.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,9 +121,9 @@ public class ThemThongTinLuongNV extends javax.swing.JFrame {
                                 .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(74, 74, 74))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(SDT)
+                                .addComponent(MaNV)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtSDT, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                                .addComponent(txtMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(Sogiolamviec)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
@@ -140,8 +140,8 @@ public class ThemThongTinLuongNV extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Sogiolamviec, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSogiolamviec, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SDT)
-                    .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MaNV)
+                    .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Thoát, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,7 +182,7 @@ public class ThemThongTinLuongNV extends javax.swing.JFrame {
         // TODO add your handling code here:
         String row[]= new String[2];
         // row[0]= txtMaNV.getText();
-        row[0]=txtSDT.getText();
+        row[0]=txtMaNV.getText();
         row[1]=txtSogiolamviec.getText();
         // row[9]=txtGhichu.getText();
         //        if(txtMaNV.getText().equals("") || txtTenNV.getText().equals("") || txtGioitinh.getSelectedItem().toString().equals("")
@@ -233,15 +233,15 @@ public class ThemThongTinLuongNV extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel MaNV;
     private javax.swing.JButton Reset;
-    private javax.swing.JLabel SDT;
     private javax.swing.JLabel Sogiolamviec;
     private javax.swing.JButton Them;
     private javax.swing.JButton Thoát;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtSDT;
+    private javax.swing.JTextField txtMaNV;
     private javax.swing.JTextField txtSogiolamviec;
     // End of variables declaration//GEN-END:variables
 }

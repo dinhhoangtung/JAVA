@@ -18,7 +18,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import ql_cafe.ConnectDB;
 
 /**
@@ -63,8 +65,8 @@ GridBagLayout layout = new GridBagLayout();
 //            tblModelTT.addRow(new Object[] {x.getMaNV(), x.getTenNV(), x.getGioiTinh(), x.getNgayBD(), x.getThoiGian(), x.getGioLamViec(), x.getBoPhan(), x.getLuong(), x.getGhiChu()} );
     };
     public void TaoTableNhanVien() throws SQLException{
-        //lấy dữ liệu từ mysql
-//        Connection con = new ConnectDB().dbConnector();
+       // lấy dữ liệu từ mysql
+//        Connection con = ConnectDB.getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
 //        ArrayList<NhanVien> list = new ArrayList();
 //        String sqlString = "Select * from nhanvien";
 //        Statement start = (Statement) con.createStatement();
@@ -687,11 +689,11 @@ GridBagLayout layout = new GridBagLayout();
 
             },
             new String [] {
-                "Tên NV", "Giới Tính", "Số Giờ Làm Việc", "Lương", "Ghi Chú"
+                "MaNV", "Số Giờ Làm Việc"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -832,11 +834,11 @@ GridBagLayout layout = new GridBagLayout();
 
             },
             new String [] {
-                "Tên KH", "Ngày Sinh", "Giới Tính", "SĐT", "Email", "Ngày ĐK", "Ngày BĐ"
+                "Tên KH", "Ngày Sinh", "Giới Tính", "SĐT", "Email", "MaNV"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -955,7 +957,7 @@ GridBagLayout layout = new GridBagLayout();
 
             },
             new String [] {
-                "Tên NV", "Ngày Sinh", "Giới Tính", "CMND", "SĐT", "Email", "Ngày Bắt Đầu", "Trị Giá Lương"
+                "Tên NV", "Ngày Sinh", "Giới Tính", "CMND", "SĐT", "Email", "Ngày Bắt Đầu", "Trị Giá Lương", "MaNV"
             }
         ));
         tbNhanVien.setGridColor(new java.awt.Color(255, 255, 255));
@@ -1081,7 +1083,26 @@ GridBagLayout layout = new GridBagLayout();
     
     
     private void StaffFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StaffFunActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tbNhanVien.getModel();
+       
+               
+        try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) ConnectDB.getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from nhanvien");
+            // show data
+            while (rs.next()) {
+                 model.addRow(new Object[]{rs.getString(1),rs.getDate(2),rs.getString(3),rs.getString(5),rs.getString(4),rs.getString(6), rs.getDate(7),rs.getInt(9),rs.getInt(8)});
+                 
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_StaffFunActionPerformed
 
     private void HomeFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeFunActionPerformed
@@ -1094,6 +1115,26 @@ GridBagLayout layout = new GridBagLayout();
 
     private void CustomerFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerFunActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tbKH.getModel();
+       
+               
+        try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) ConnectDB.getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from khachhang");
+            // show data
+            while (rs.next()) {
+                 model.addRow(new Object[]{rs.getString(3),rs.getDate(4),rs.getString(2),rs.getInt(6),rs.getString(5),rs.getInt(1)});
+                 
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_CustomerFunActionPerformed
 
     private void StaffFunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StaffFunMouseClicked
@@ -1137,6 +1178,26 @@ GridBagLayout layout = new GridBagLayout();
 
     private void SalaryFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalaryFunActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tbLuong.getModel();
+       
+               
+        try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) ConnectDB.getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from luong");
+            // show data
+            while (rs.next()) {
+                 model.addRow(new Object[]{rs.getInt(1),rs.getInt(2)});
+                 
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_SalaryFunActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
