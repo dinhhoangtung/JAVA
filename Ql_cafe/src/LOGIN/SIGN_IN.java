@@ -74,6 +74,11 @@ public class SIGN_IN extends javax.swing.JFrame {
         jLabel1.setText("Username:");
 
         jTextField1.setBackground(new java.awt.Color(151, 117, 80));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,8 +156,6 @@ public class SIGN_IN extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 290, 400));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Thang Mi\\Documents\\NetBeansProjects\\helloworld\\src\\main\\java\\images\\cappuccino-cafe-cua-y.png")); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, -1));
 
         pack();
@@ -238,6 +241,10 @@ public class SIGN_IN extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

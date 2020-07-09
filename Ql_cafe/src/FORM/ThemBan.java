@@ -5,6 +5,15 @@
  */
 package FORM;
 
+import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import ql_cafe.ConnectDB;
+import static ql_cafe.ConnectDB.getConnection;
+
 /**
  *
  * @author HP
@@ -84,7 +93,7 @@ public class ThemBan extends javax.swing.JFrame {
 
         Sua.setBackground(new java.awt.Color(61, 29, 61));
         Sua.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Sua.setText("Sửa");
+        Sua.setText("Thêm");
         Sua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SuaActionPerformed(evt);
@@ -163,18 +172,40 @@ public class ThemBan extends javax.swing.JFrame {
         String row[]= new String[2];
         // row[0]= txtMaNV.getText();
         row[0]=txtThemBan.getText();
+         if(txtThemBan.getText().equals(""))
+       {
+           JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin");
+       }
+       else
+       {
+           JOptionPane.showMessageDialog(this, "Thêm bàn ăn thành công");
+       }
+        int s = 1;
+        int check =0;
+         try {
+        Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from datban where SoBan = '"+txtThemBan.getText()+"'  ");
+             while (rs.next()) {
+                check =1;
+                if(s == rs.getInt((8))){
+                    JOptionPane.showMessageDialog(null, "Thêm bàn thành công");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
+                }
+                
+            }
+        }
+        catch(Exception ex)
+        {
+            Logger.getLogger(ThemBan.class.getName()).log(Level.SEVERE, null, ex);
+        }
       
-        // row[9]=txtGhichu.getText();
-        //       if(txtMaNV.getText().equals("") || txtTenNV.getText().equals("") || txtGioitinh.getSelectedItem().toString().equals("")
-            //            || txtNgayBD.getDateFormatString().equals("") || txtThoigian.getText().equals("") || txtSogiolamviec.getText().equals("") ||
-            //            txtBoPhan.getText().equals("") || txtLuong.getText().equals(""))
-        //        {
-            //            JOptionPane.showMessageDialog(this, "Nhập thông tin lương nhân viên chưa đầy đủ");
-            //        }
-        //        else
-        //        {
-            //            JOptionPane.showMessageDialog(this, "Sửa thông tin lương nhân viên thành công");
-            //        }
+        
     }//GEN-LAST:event_SuaActionPerformed
 
     /**

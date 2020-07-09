@@ -22,6 +22,7 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ql_cafe.ConnectDB;
+import static ql_cafe.ConnectDB.getConnection;
 
 /**
  *
@@ -215,6 +216,30 @@ public class AddMonAn extends javax.swing.JPanel {
        {
            JOptionPane.showMessageDialog(this, "Thêm món ăn thành công");
        }
+        int d = 1;
+        int check =0;
+        try {
+        Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from sanpham where TenSP = '"+txtTenMonAn.getText()+"' and SizeSP='"+txtSize.getText()+"' and GiaSP='"+txtGia.getText()+"' ");
+             while (rs.next()) {
+                check =1;
+                if(d == rs.getInt((8))){
+                    JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
+                }
+                
+            }
+        }
+        catch(Exception ex)
+        {
+            Logger.getLogger(AddMonAn.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_ThemmonActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed

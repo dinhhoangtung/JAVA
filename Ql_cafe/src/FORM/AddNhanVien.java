@@ -8,6 +8,8 @@ package FORM;
 import Models.NhanVien;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -21,6 +23,7 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ql_cafe.ConnectDB;
+import static ql_cafe.ConnectDB.getConnection;
 
 
 /**
@@ -29,7 +32,8 @@ import ql_cafe.ConnectDB;
  */
 
 public class AddNhanVien extends javax.swing.JFrame {
-    
+     private static final Charset UTF_8 = StandardCharsets.UTF_8;
+    private static final String OUTPUT_FORMAT = "%-20s:%s"; 
     public AddNhanVien() throws SQLException {
         initComponents();
   
@@ -64,7 +68,7 @@ public class AddNhanVien extends javax.swing.JFrame {
         Thoát = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
         NS1 = new javax.swing.JLabel();
-        txtSDT1 = new javax.swing.JTextField();
+        txtSDT = new javax.swing.JTextField();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -207,12 +211,12 @@ public class AddNhanVien extends javax.swing.JFrame {
         NS1.setText("Ngày sinh :");
         addNV.add(NS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 162, -1, -1));
 
-        txtSDT1.addActionListener(new java.awt.event.ActionListener() {
+        txtSDT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSDT1ActionPerformed(evt);
+                txtSDTActionPerformed(evt);
             }
         });
-        addNV.add(txtSDT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 202, 27));
+        addNV.add(txtSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 202, 27));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,50 +243,77 @@ public class AddNhanVien extends javax.swing.JFrame {
 
     private void ThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThêmActionPerformed
 //        // TODO add your handling code here:
+ String row[] = new String[8];
+        // lấy giá trị ở TextFiel để đưa vào mảng
+        row[0]= txtTRiGiaLuong.getText();
+        row[1] = txtTenNV.getText();
+        row[2] = txtNS.getDateFormatString();
+        row[3] = txtGT.getSelectedItem().toString();
+        row[4] = txtCMND.getText();
+        row[5] = txtSDT.getText();
+        row[6] = txtEmail.getText();
+        row[7] = txtNBD.getDateFormatString();
+    if (txtTRiGiaLuong.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+     if (txtSDT.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+      if (txtCMND.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+       if (txtTenNV.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+        if (txtGT.getSelectedItem().toString().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+         if (txtNS.getDateFormatString().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    } if (txtNBD.getDateFormatString().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+          if (txtEmail.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+          int ad=0;
+          int check=0;
+       try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from nhanvien where CMNDNV = '"+txtCMND.getText()+"' and SdtNV='"+txtSDT.getText()+"' and HoTenNV='"+txtTenNV.getText()+"'"
+            + " and NgaySinhNV='"+txtNS.getDateFormatString()+"' and GioiTinhNV='"+txtGT.getSelectedItem()+"' and EmailNV='"+txtCMND.getText()+"'"
+            + " and NgayBatDauNV='"+txtNBD.getDateFormatString()+"' and TriGiaLuongNV='"+txtTRiGiaLuong.getText()+"'");
+            while (rs.next()) {
+                check =1;
+                if(ad == rs.getInt((8))){
+                    JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
+                }
+                
+            }
+            // close connection
+            conn.close();
+       }
+       catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
 
-//        String row[] = new String[8];
-//        // lấy giá trị ở TextFiel để đưa vào mảng
-//    
-//        row[1] = txtTenNV.getText();
-//        row[2] = txtNS.getDateFormatString();
-//        row[3] = txtGT.getSelectedItem().toString();
-//        row[4] = txtCMND.getText();
-//        row[5] = txtSDT.getText();
-//        row[6] = txtEmail.getText();
-//        row[7] = txtNBD.getDateFormatString();
-//          // thêm  1 dòng mới vào  Defaultablemodel
-//        //DefaultTableModel TableBn = (DefaultTableModel) tbNhanVien.getModel();
-//        //TableBn.addRow(row);
-//        final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-//        String sql = "INSERT INTO NHANVIEN(MANV, TENNV, GIOITINH, NGAYSINH, CMND, SDT, EMAIL, NGAYBATDAU, TRANGTHAI, GHICHU) VALUES("
-//                + "'',"
-//                + "'"+txtTenNV.getText()+"',"
-//                + "'"+txtGT.getSelectedItem().toString()+"',"
-//                + "'"+df.format(txtNS.getDate())+"',"
-//                + "'"+txtCMND.getText()+"',"
-//                + "'"+txtSDT.getText()+"',"
-//                + "'"+txtEmail.getText()+"',"
-//                + "'"+df.format(txtNBD.getDate())+"',"
-//                + "'Đang làm việc',"
-//                + "'')";
-//        try {
-//           // Connection con = new ConnectDB().dbConnector();
-//           // Statement pstmt = (Statement) con.createStatement();
-//          //  pstmt.executeUpdate(sql);
-////            pstmt.setString(1, txtMaBN.getText());
-////            pstmt.setString(2, txtTenBN.getText());
-////            pstmt.setString(3, txtNgaySinhBN.getText());
-////            pstmt.setString(4, txtDiaChi.getText());
-////            pstmt.setString(5, txtSDT.getText());
-////            pstmt.setString(6, selectGioiTinh.getSelectedItem().toString());
-////            pstmt.executeUpdate();
-//            JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công!");
-//           // con.close();
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//            JOptionPane.showMessageDialog(null, "Thêm nhân viên không thành công!");
-//        }
-//        System.out.println(sql);
     }//GEN-LAST:event_ThêmActionPerformed
 
     private void txtGTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGTActionPerformed
@@ -315,9 +346,9 @@ public class AddNhanVien extends javax.swing.JFrame {
         txtNBD.setDateFormatString("");
     }//GEN-LAST:event_ResetActionPerformed
 
-    private void txtSDT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSDT1ActionPerformed
+    private void txtSDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSDTActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSDT1ActionPerformed
+    }//GEN-LAST:event_txtSDTActionPerformed
  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -414,7 +445,7 @@ public class AddNhanVien extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> txtGT;
     private com.toedter.calendar.JDateChooser txtNBD;
     private com.toedter.calendar.JDateChooser txtNS;
-    private javax.swing.JTextField txtSDT1;
+    private javax.swing.JTextField txtSDT;
     private javax.swing.JTextField txtTRiGiaLuong;
     private javax.swing.JTextField txtTenNV;
     // End of variables declaration//GEN-END:variables

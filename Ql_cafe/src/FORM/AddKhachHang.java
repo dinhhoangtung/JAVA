@@ -5,9 +5,17 @@
  */
 package FORM;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import ql_cafe.ConnectDB;
+import static ql_cafe.ConnectDB.getConnection;
 
 /**
  *
@@ -262,20 +270,63 @@ public class AddKhachHang extends javax.swing.JFrame {
 
     private void ThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThêmActionPerformed
         //        // TODO add your handling code here:
-        String row[] = new String[8];
+        String row[] = new String[5];
         // lấy giá trị ở TextFiel để đưa vào mảng
 
-        row[1] = txtTenKH.getText();
-        row[2] = txtNS.getDateFormatString();
-        row[3] = txtGT.getSelectedItem().toString();
-   
-        row[5] = txtSDT.getText();
-        row[6] = txtEmail.getText();
-        row[7] = txtNBD.getDateFormatString();
+        row[0] = txtTenKH.getText();
+        row[1] = txtNS.getDateFormatString();
+        row[2] = txtGT.getSelectedItem().toString();
+        row[3] = txtSDT.getText();
+        row[4] = txtEmail.getText();
         // thêm  1 dòng mới vào  Defaultablemodel
         //DefaultTableModel TableBn = (DefaultTableModel) tbNhanVien.getModel();
         //TableBn.addRow(row);
         final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        if (txtTenKH.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+        if (txtNS.getDateFormatString().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+        if (txtGT.getSelectedItem().equals(""))
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+        if (txtSDT.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+        if (txtEmail.getText().isBlank())
+    {
+        JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
+    }
+        int ad=0;
+        int check=0;
+        try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+             ResultSet rs = sts.executeQuery("select * from khachhang where MaKH ='"+txtTenKH.getText()+"' and GioiTinhKH='"+txtGT.getSelectedItem()+"'"
+                     + "and NgaysinhKH='"+txtNS.getDateFormatString()+"' and SdtKH='"+txtSDT.getText()+"' and EmailKH='"+txtEmail.getText()+"' ");
+             while (rs.next()) {
+                check =1;
+                if(ad == rs.getInt((8))){
+                    JOptionPane.showMessageDialog(null, "Thêm khách hàng thành công");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Xin vui lòng kiểm tra lại");
+                }
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             
     }//GEN-LAST:event_ThêmActionPerformed
 
     private void txtTenKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKHActionPerformed
@@ -305,6 +356,7 @@ public class AddKhachHang extends javax.swing.JFrame {
         txtSDT.setText("");
         txtEmail.setText("");
         txtNBD.setDateFormatString("");
+        
     }//GEN-LAST:event_ResetActionPerformed
 
     /**
