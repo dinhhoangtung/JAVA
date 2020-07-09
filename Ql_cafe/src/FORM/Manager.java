@@ -582,6 +582,9 @@ GridBagLayout layout = new GridBagLayout();
                 {null},
                 {null},
                 {null},
+                {null},
+                {null},
+                {null},
                 {null}
             },
             new String [] {
@@ -607,7 +610,7 @@ GridBagLayout layout = new GridBagLayout();
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
+                .addGap(100, 100, 100)
                 .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -626,7 +629,7 @@ GridBagLayout layout = new GridBagLayout();
                         .addGroup(TableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(TableLayout.createSequentialGroup()
                                 .addComponent(jButton43)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(15, 15, 15)
                                 .addComponent(jButton44)
                                 .addGap(19, 19, 19)
                                 .addComponent(jButton45))
@@ -684,11 +687,11 @@ GridBagLayout layout = new GridBagLayout();
 
             },
             new String [] {
-                "Mã NV", "Tên NV", "Giới Tính", "Ngày Bắt Đầu", "Thời Gian", "Số Giờ Làm Việc", "Bộ Phận", "Lương", "Ghi Chú"
+                "Tên NV", "Giới Tính", "Số Giờ Làm Việc", "Lương", "Ghi Chú"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -829,11 +832,11 @@ GridBagLayout layout = new GridBagLayout();
 
             },
             new String [] {
-                "Mã KH", "Tên KH", "Ngày Sinh", "Giới Tính", "CMND", "SĐT", "Email", "Ngày ĐK", "Loại KH", "Ghi Chú"
+                "Tên KH", "Ngày Sinh", "Giới Tính", "SĐT", "Email", "Ngày ĐK", "Ngày BĐ"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -952,7 +955,7 @@ GridBagLayout layout = new GridBagLayout();
 
             },
             new String [] {
-                "Mã NV", "Tên NV", "Ngày Sinh", "Giới Tính", "CMND", "SĐT", "Email", "Ngày Bắt Đầu", "Trạng Thái", "Ghi Chú"
+                "Tên NV", "Ngày Sinh", "Giới Tính", "CMND", "SĐT", "Email", "Ngày Bắt Đầu", "Trị Giá Lương"
             }
         ));
         tbNhanVien.setGridColor(new java.awt.Color(255, 255, 255));
