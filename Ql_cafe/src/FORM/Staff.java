@@ -19,8 +19,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import ql_cafe.ConnectDB;
+import static ql_cafe.ConnectDB.getConnection;
 
 /**
  *
@@ -125,22 +129,6 @@ GridBagLayout layout = new GridBagLayout();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -155,7 +143,6 @@ GridBagLayout layout = new GridBagLayout();
         jButton33 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
@@ -163,7 +150,6 @@ GridBagLayout layout = new GridBagLayout();
         jTextField3 = new javax.swing.JTextField();
         jButton34 = new javax.swing.JButton();
         jButton35 = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jButton41 = new javax.swing.JButton();
@@ -353,70 +339,6 @@ GridBagLayout layout = new GridBagLayout();
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setLayout(new java.awt.GridLayout(4, 4, 12, 5));
 
-        jButton1.setBackground(new java.awt.Color(153, 223, 223));
-        jButton1.setText("...");
-        jPanel2.add(jButton1);
-
-        jButton8.setBackground(new java.awt.Color(153, 223, 223));
-        jButton8.setText("...");
-        jPanel2.add(jButton8);
-
-        jButton9.setBackground(new java.awt.Color(153, 223, 223));
-        jButton9.setText("...");
-        jPanel2.add(jButton9);
-
-        jButton10.setBackground(new java.awt.Color(153, 223, 223));
-        jButton10.setText("...");
-        jPanel2.add(jButton10);
-
-        jButton2.setBackground(new java.awt.Color(153, 223, 223));
-        jButton2.setText("...");
-        jPanel2.add(jButton2);
-
-        jButton20.setBackground(new java.awt.Color(153, 223, 223));
-        jButton20.setText("...");
-        jPanel2.add(jButton20);
-
-        jButton19.setBackground(new java.awt.Color(153, 223, 223));
-        jButton19.setText("...");
-        jPanel2.add(jButton19);
-
-        jButton13.setBackground(new java.awt.Color(153, 223, 223));
-        jButton13.setText("...");
-        jPanel2.add(jButton13);
-
-        jButton14.setBackground(new java.awt.Color(153, 223, 223));
-        jButton14.setText("...");
-        jPanel2.add(jButton14);
-
-        jButton17.setBackground(new java.awt.Color(153, 223, 223));
-        jButton17.setText("...");
-        jPanel2.add(jButton17);
-
-        jButton23.setBackground(new java.awt.Color(153, 223, 223));
-        jButton23.setText("...");
-        jPanel2.add(jButton23);
-
-        jButton24.setBackground(new java.awt.Color(153, 223, 223));
-        jButton24.setText("...");
-        jPanel2.add(jButton24);
-
-        jButton22.setBackground(new java.awt.Color(153, 223, 223));
-        jButton22.setText("...");
-        jPanel2.add(jButton22);
-
-        jButton18.setBackground(new java.awt.Color(153, 223, 223));
-        jButton18.setText("...");
-        jPanel2.add(jButton18);
-
-        jButton16.setBackground(new java.awt.Color(153, 223, 223));
-        jButton16.setText("...");
-        jPanel2.add(jButton16);
-
-        jButton15.setBackground(new java.awt.Color(153, 223, 223));
-        jButton15.setText("...");
-        jPanel2.add(jButton15);
-
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel5.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
@@ -484,45 +406,37 @@ GridBagLayout layout = new GridBagLayout();
         jLabel6.setFont(new java.awt.Font("Arial Unicode MS", 3, 13)); // NOI18N
         jLabel6.setText("CUSTOMER:");
 
-        jComboBox3.setBackground(new java.awt.Color(153, 223, 223));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VIP", "NOR" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
-            }
-        });
-
         jTable2.setBackground(new java.awt.Color(153, 223, 223));
         jTable2.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "NAME", "QUANTITY", "DISCOUNT", "PRICE"
+                "NAME", "QUANTITY", "PRICE"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class
+                java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -577,7 +491,7 @@ GridBagLayout layout = new GridBagLayout();
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton35, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(jButton35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
@@ -592,25 +506,18 @@ GridBagLayout layout = new GridBagLayout();
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(27, 27, 27)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(139, 139, 139)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jLabel19.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Search :");
 
         jLabel20.setFont(new java.awt.Font("Lucida Handwriting", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -646,15 +553,10 @@ GridBagLayout layout = new GridBagLayout();
                         .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 13, Short.MAX_VALUE))
                     .addGroup(MenuLayout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
-            .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(MenuLayout.createSequentialGroup()
-                    .addGap(336, 336, 336)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(337, Short.MAX_VALUE)))
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -676,11 +578,6 @@ GridBagLayout layout = new GridBagLayout();
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton41))
                 .addContainerGap(13, Short.MAX_VALUE))
-            .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(MenuLayout.createSequentialGroup()
-                    .addGap(190, 190, 190)
-                    .addComponent(jLabel19)
-                    .addContainerGap(190, Short.MAX_VALUE)))
         );
 
         control.add(Menu, "card4");
@@ -953,13 +850,69 @@ GridBagLayout layout = new GridBagLayout();
     }//GEN-LAST:event_HomeFunActionPerformed
 
     private void MenuFunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFunActionPerformed
-        // TODO add your handling code here:
+       try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from sanpham");
+            // show data
+            while (rs.next()) {
+             JButton jButton1 = new javax.swing.JButton();
+               jButton1.setText(rs.getString(1)+rs.getString(2));
+               jButton1.setName(rs.getString(3));
+               jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                haha(evt);
+            }
+            
+        });
+                
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_MenuFunActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-
+private int tong = 0;
+     private void haha(java.awt.event.ActionEvent evt) {       
+          DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+          JButton a = (JButton) evt.getSource();
+          int i=getRowByValue(jTable2, a.getText()) ;
+           if(i != -2)
+          {
+                int ss = (int) jTable2.getValueAt(i, 2);
+                ss++;
+                jTable2.remove(i);
+          model.addRow(new Object[]{a.getText(),ss,a.getName()});
+          tong += Integer.parseInt(a.getName());
+          }
+           else
+           {
+                model.addRow(new Object[]{a.getText(),"1",a.getName()});
+                tong += Integer.parseInt(a.getName());
+           }
+           
+           
+           
+           jTextField3.setText(Integer.toString(tong));
+         
+     }
+     
+     private  int getRowByValue(JTable model, Object value) {
+    for (int i = model.getRowCount() - 1; i >= 0; --i) {
+        for (int j = model.getColumnCount() - 1; j >= 0; --j) {
+            if (model.getValueAt(i, j).equals(value)) {
+                // what if value is not unique?
+                return i;
+            }
+        }
+    }
+    return -2;
+ }
+     
     private void UserFunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserFunMouseClicked
         // TODO add your handling code here:
         if (evt.getSource()==MenuFun){
@@ -977,10 +930,6 @@ GridBagLayout layout = new GridBagLayout();
             Home.setVisible(true);
         }
     }//GEN-LAST:event_UserFunMouseClicked
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void KhachHangFunUserFunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KhachHangFunUserFunMouseClicked
         // TODO add your handling code here:
@@ -1026,6 +975,10 @@ GridBagLayout layout = new GridBagLayout();
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1082,23 +1035,9 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JButton ThemBan;
     private javax.swing.JPanel control;
     private javax.swing.JPanel function;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
@@ -1117,16 +1056,12 @@ GridBagLayout layout = new GridBagLayout();
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;

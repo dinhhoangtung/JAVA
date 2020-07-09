@@ -190,6 +190,7 @@ public class SIGN_IN extends javax.swing.JFrame {
         else
             asd = 1;
         int check =0;
+        
         try {
             // connnect to database 'testdb'
             Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
@@ -214,6 +215,7 @@ public class SIGN_IN extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        
         if(check ==0 ){
             JOptionPane.showMessageDialog(null, "Sai ten dang nhap hoac mat khau");
         }
