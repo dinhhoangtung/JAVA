@@ -69,6 +69,9 @@ public class AddNhanVien extends javax.swing.JFrame {
         Reset = new javax.swing.JButton();
         NS1 = new javax.swing.JLabel();
         txtSDT = new javax.swing.JTextField();
+        MaNV = new javax.swing.JLabel();
+        DT3 = new javax.swing.JLabel();
+        txtMaNV = new javax.swing.JTextField();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -93,7 +96,7 @@ public class AddNhanVien extends javax.swing.JFrame {
         DT.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         DT.setForeground(new java.awt.Color(255, 255, 255));
         DT.setText("Email :");
-        addNV.add(DT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        addNV.add(DT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
         GT.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         GT.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +108,7 @@ public class AddNhanVien extends javax.swing.JFrame {
                 txtEmailActionPerformed(evt);
             }
         });
-        addNV.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 202, 27));
+        addNV.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 202, 27));
 
         txtTRiGiaLuong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +133,7 @@ public class AddNhanVien extends javax.swing.JFrame {
                 ThêmActionPerformed(evt);
             }
         });
-        addNV.add(Thêm, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 94, 39));
+        addNV.add(Thêm, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 94, 39));
 
         txtTenNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,7 +193,7 @@ public class AddNhanVien extends javax.swing.JFrame {
                 ThoátActionPerformed(evt);
             }
         });
-        addNV.add(Thoát, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 94, 39));
+        addNV.add(Thoát, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 94, 39));
 
         Reset.setBackground(new java.awt.Color(61, 29, 61));
         Reset.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -204,7 +207,7 @@ public class AddNhanVien extends javax.swing.JFrame {
                 ResetActionPerformed(evt);
             }
         });
-        addNV.add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 100, 40));
+        addNV.add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 100, 40));
 
         NS1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         NS1.setForeground(new java.awt.Color(255, 255, 255));
@@ -218,6 +221,23 @@ public class AddNhanVien extends javax.swing.JFrame {
         });
         addNV.add(txtSDT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 202, 27));
 
+        MaNV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        MaNV.setForeground(new java.awt.Color(255, 255, 255));
+        MaNV.setText("MaNV:");
+        addNV.add(MaNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+
+        DT3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        DT3.setForeground(new java.awt.Color(255, 255, 255));
+        DT3.setText("Email :");
+        addNV.add(DT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
+        txtMaNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMaNVActionPerformed(evt);
+            }
+        });
+        addNV.add(txtMaNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 202, 27));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -226,7 +246,7 @@ public class AddNhanVien extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(addNV, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
         pack();
@@ -243,7 +263,7 @@ public class AddNhanVien extends javax.swing.JFrame {
 
     private void ThêmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThêmActionPerformed
 //        // TODO add your handling code here:
-
+final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     if (txtTRiGiaLuong.getText().isBlank())
     {
         JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin","Enor",JOptionPane.INFORMATION_MESSAGE);
@@ -282,8 +302,7 @@ public class AddNhanVien extends javax.swing.JFrame {
             // crate statement
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
-  sts.executeUpdate("INSERT INTO `nhanvien`(`HoTenNV`, `NgaySinhNV`, `GioiTinhNV`, `SdtNV`, `CMNDNV`, `EmailNV`, `NgayBatDauNV`, `MaNV`, `TriGiaLuongNV`) VALUES ("+txtTenNV.getText()+","+txtNS.getDateFormatString()+","+txtGT.getSelectedItem().toString()+","+txtSDT.getText()+","+txtCMND.getText()+","+txtEmail.getText()+","+txtNBD.getDateFormatString()+",null,"+txtTRiGiaLuong.getText()+")");
-          
+  sts.executeUpdate("INSERT INTO `nhanvien`(`HoTenNV`, `NgaySinhNV`, `GioiTinhNV`, `SdtNV`,`CMNDNV` `EmailNV`, `NgayBatDauNV`, `MaNV`,`TRiGIaLuongNV`) VALUES (NULL,'"+txtTenNV+"','"+df.format(txtNS.getDate())+"','"+txtGT.getSelectedItem()+"','"+txtSDT.getText()+"', '"+txtCMND.getText()+"',"+txtEmail.getText()+"','"+df.format(txtNS.getDate())+"','"+txtMaNV.getText()+"','"+txtTRiGiaLuong.getText()+"');");
             // close connection
             conn.close();
        }
@@ -327,6 +346,10 @@ public class AddNhanVien extends javax.swing.JFrame {
     private void txtSDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSDTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSDTActionPerformed
+
+    private void txtMaNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaNVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaNVActionPerformed
  public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -408,7 +431,9 @@ public class AddNhanVien extends javax.swing.JFrame {
     private javax.swing.JLabel DC;
     private javax.swing.JLabel DT;
     private javax.swing.JLabel DT1;
+    private javax.swing.JLabel DT3;
     private javax.swing.JLabel GT;
+    private javax.swing.JLabel MaNV;
     private javax.swing.JLabel NS1;
     private javax.swing.JButton Reset;
     private javax.swing.JLabel TenBenhNhan;
@@ -421,6 +446,7 @@ public class AddNhanVien extends javax.swing.JFrame {
     private javax.swing.JTextField txtCMND;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JComboBox<String> txtGT;
+    private javax.swing.JTextField txtMaNV;
     private com.toedter.calendar.JDateChooser txtNBD;
     private com.toedter.calendar.JDateChooser txtNS;
     private javax.swing.JTextField txtSDT;

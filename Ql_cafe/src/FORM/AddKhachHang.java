@@ -295,7 +295,9 @@ public class AddKhachHang extends javax.swing.JFrame {
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
 
-            sts.executeUpdate("INSERT INTO `khachhang`(`MaKH`, `GioiTinhKH`, `HoTenKH`, `NgaySinhKH`, `EmailKH`, `SdtKh`) VALUES (null,"+txtGT.getSelectedItem().toString()+","+txtTenKH.getText()+","+txtNS.getDateFormatString()+","+txtEmail.getText()+","+txtSDT.getText()+")");
+            sts.executeUpdate("INSERT INTO `khachhang`(`MaKH`, `GioiTinhKH`, `HoTenKH`, `NgaySinhKH`, `EmailKH`, `SdtKh`) VALUES (NULL,'"+txtGT.getSelectedItem().toString()+"','"+txtTenKH.getText()+"','"+df.format(txtNS.getDate())+"','"+txtEmail.getText()+"','"+txtSDT.getText()+"');");
+            JOptionPane.showMessageDialog(null, "INSERT INTO `khachhang`(`MaKH`, `GioiTinhKH`, `HoTenKH`, `NgaySinhKH`, `EmailKH`, `SdtKh`) VALUES (NULL,'"+txtGT.getSelectedItem().toString()+"','"+txtTenKH.getText()+"','"+df.format(txtNS.getDate())+"','"+txtEmail.getText()+"','"+txtSDT.getText()+"');");
+            conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddKhachHang.class.getName()).log(Level.SEVERE, null, ex);
         }

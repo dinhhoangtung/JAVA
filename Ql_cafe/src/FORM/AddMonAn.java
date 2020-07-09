@@ -210,20 +210,21 @@ public class AddMonAn extends javax.swing.JPanel {
        else
        {
            JOptionPane.showMessageDialog(this, "Thêm món ăn thành công");
-       }
+       
       
         try {
         Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
             // crate statement
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
-           sts.executeUpdate("INSERT INTO `sanpham`(`TenSP`, `SizeSP`, `GiaSP`) VALUES ("+txtTenMonAn.getText()+","+txtSize.getText()+","+txtGia.getText()+")");
+           sts.executeUpdate("INSERT INTO sanpham(`TenSP`, `SizeSP`, `GiaSP`) VALUES ('"+txtTenMonAn.getText()+"','"+txtSize.getText()+"','"+txtGia.getText()+"')");
              
         }
         catch(Exception ex)
         {
             Logger.getLogger(AddMonAn.class.getName()).log(Level.SEVERE, null, ex);
         }
+       }
     }//GEN-LAST:event_ThemmonActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
