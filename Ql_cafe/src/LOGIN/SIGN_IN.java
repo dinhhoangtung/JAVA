@@ -5,12 +5,35 @@
  */
 package LOGIN;
 
+
+import com.mysql.jdbc.Statement;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import java.sql.Connection;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import ql_cafe.ConnectDB;
+import static ql_cafe.ConnectDB.getConnection;
+
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author ADMIN
  */
 public class SIGN_IN extends javax.swing.JFrame {
 
+    
+    private static final Charset UTF_8 = StandardCharsets.UTF_8;
+    private static final String OUTPUT_FORMAT = "%-20s:%s"; 
+    
     /**
      * Creates new form SIGN_IN
      */
@@ -135,10 +158,83 @@ public class SIGN_IN extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if(jTextField1.getText().isBlank())
+        {
+            JOptionPane.showMessageDialog(null, "Khong duoc de trong", "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        
+        if(jTextField2.getText().isBlank()){
+            JOptionPane.showMessageDialog(null, "Khong duoc de trong", "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        
+        byte[] md5 =null;
+        try {
+            md5 = digest(jTextField2.getText().getBytes(UTF_8));
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(SIGN_IN.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String hex = bytesToHex(md5);
+        
+        int asd = 0;
+        if(jComboBox1.getSelectedIndex()==1){
+            asd = 0 ;
+        }
+        else
+            asd = 1;
+        int check =0;
+        try {
+            // connnect to database 'testdb'
+            Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
+            // crate statement
+            Statement sts = (Statement) conn.createStatement();
+            // get data from table 'student'
+            ResultSet rs = sts.executeQuery("select * from taikhoanNV where tk = '"+jTextField1.getText()+"' and mk = '"+hex+"'");
+            // show data
+            while (rs.next()) {
+                check =1;
+                if(asd == rs.getInt((4))){
+                    JOptionPane.showMessageDialog(null, "Dang nhap thanh cong");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Xin vui long kiem tra lai");
+                }
+                
+            }
+            // close connection
+            conn.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        if(check ==0 ){
+            JOptionPane.showMessageDialog(null, "Sai ten dang nhap hoac mat khau");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private static byte[] digest(byte[] input) throws NoSuchAlgorithmException {
+        MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalArgumentException(e);
+        }
+        byte[] result = md.digest(input);
+        return result;
+    }
+
+    private static String bytesToHex(byte[] bytes) {
+        StringBuilder sb = new StringBuilder();
+        for (byte b : bytes) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
+    }
+    
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
