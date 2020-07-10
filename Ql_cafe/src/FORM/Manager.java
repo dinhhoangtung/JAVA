@@ -1233,6 +1233,7 @@ GridBagLayout layout = new GridBagLayout();
     }//GEN-LAST:event_AddNVActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+
         // TODO add your handling code here:
          AddMonAn n = new AddMonAn();
         n.setVisible(true);

@@ -6,6 +6,8 @@
 package LOGIN;
 
 
+import FORM.Manager;
+import FORM.Staff;
 import com.mysql.jdbc.Statement;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -53,9 +55,9 @@ public class SIGN_IN extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        UserName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Password = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -73,10 +75,10 @@ public class SIGN_IN extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username:");
 
-        jTextField1.setBackground(new java.awt.Color(151, 117, 80));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        UserName.setBackground(new java.awt.Color(151, 117, 80));
+        UserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                UserNameActionPerformed(evt);
             }
         });
 
@@ -84,10 +86,10 @@ public class SIGN_IN extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password:");
 
-        jTextField2.setBackground(new java.awt.Color(151, 117, 80));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Password.setBackground(new java.awt.Color(151, 117, 80));
+        Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                PasswordActionPerformed(evt);
             }
         });
 
@@ -131,8 +133,8 @@ public class SIGN_IN extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(UserName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                        .addComponent(Password, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(126, 126, 126))
         );
         jPanel1Layout.setVerticalGroup(
@@ -141,11 +143,11 @@ public class SIGN_IN extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -164,44 +166,57 @@ public class SIGN_IN extends javax.swing.JFrame {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(jTextField1.getText().isBlank())
+        if(UserName.getText().isBlank())
         {
             JOptionPane.showMessageDialog(null, "Khong duoc de trong", "Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         
-        if(jTextField2.getText().isBlank()){
+        if(Password.getText().isBlank()){
             JOptionPane.showMessageDialog(null, "Khong duoc de trong", "Error", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         
         byte[] md5 =null;
         try {
-            md5 = digest(jTextField2.getText().getBytes(UTF_8));
+            md5 = digest(Password.getText().getBytes(UTF_8));
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(SIGN_IN.class.getName()).log(Level.SEVERE, null, ex);
         }
         String hex = bytesToHex(md5);
         
         int asd = 0;
+        //manager = 0, staff =1
         if(jComboBox1.getSelectedIndex()==1){
             asd = 0 ;
         }
         else
             asd = 1;
         int check =0;
+        //System.out.println(jComboBox1.getSelectedIndex());
         try {
             // connnect to database 'testdb'
             Connection conn =(Connection) getConnection(ConnectDB.DB_URL, ConnectDB.USER_NAME, ConnectDB.PASSWORD);
             // crate statement
             Statement sts = (Statement) conn.createStatement();
             // get data from table 'student'
-            ResultSet rs = sts.executeQuery("select * from taikhoanNV where tk = '"+jTextField1.getText()+"' and mk = '"+hex+"'");
+            ResultSet rs = sts.executeQuery("select * from taikhoanNV where tk = '"+UserName.getText()+"' and mk = '"+Password.getText()+"'");
             // show data
+            //System.out.println(rs.next());
             while (rs.next()) {
+                System.out.println("end");
                 check =1;
                 if(asd == rs.getInt((4))){
                     JOptionPane.showMessageDialog(null, "Dang nhap thanh cong");
+                    Manager mg = new Manager();
+                    mg.setVisible(true);
+                    this.dispose();
+                }
+                else if(asd == rs.getInt((4))){
+                    JOptionPane.showMessageDialog(null, "Dang nhap thanh cong");
+                    Staff st = new Staff();
+                    st.setVisible(true);
+                    this.dispose();
                 }
                 else
                 {
@@ -214,8 +229,10 @@ public class SIGN_IN extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        
         if(check ==0 ){
             JOptionPane.showMessageDialog(null, "Sai ten dang nhap hoac mat khau");
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -238,13 +255,13 @@ public class SIGN_IN extends javax.swing.JFrame {
         return sb.toString();
     }
     
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_PasswordActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_UserNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,6 +299,8 @@ public class SIGN_IN extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Password;
+    private javax.swing.JTextField UserName;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -290,7 +309,5 @@ public class SIGN_IN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
