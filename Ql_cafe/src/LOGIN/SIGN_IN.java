@@ -158,9 +158,12 @@ public class SIGN_IN extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 290, 400));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cappuccino-cafe-cua-y.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -186,7 +189,7 @@ public class SIGN_IN extends javax.swing.JFrame {
         String hex = bytesToHex(md5);
         
         int asd = 0;
-        //manager = 0, staff =1
+        //manager = 1, staff =0
         if(jComboBox1.getSelectedIndex()==1){
             asd = 0 ;
         }
@@ -206,13 +209,13 @@ public class SIGN_IN extends javax.swing.JFrame {
             while (rs.next()) {
                 System.out.println("end");
                 check =1;
-                if(asd == rs.getInt((4))){
+                if(asd == rs.getInt((4)) && asd == 1){
                     JOptionPane.showMessageDialog(null, "Dang nhap thanh cong");
                     Manager mg = new Manager();
                     mg.setVisible(true);
                     this.dispose();
                 }
-                else if(asd == rs.getInt((4))){
+                else if(asd == rs.getInt((4)) && asd == 0){
                     JOptionPane.showMessageDialog(null, "Dang nhap thanh cong");
                     Staff st = new Staff();
                     st.setVisible(true);

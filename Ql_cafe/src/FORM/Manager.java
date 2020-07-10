@@ -961,6 +961,11 @@ GridBagLayout layout = new GridBagLayout();
             }
         ));
         tbNhanVien.setGridColor(new java.awt.Color(255, 255, 255));
+        tbNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbNhanVienMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbNhanVien);
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 14)); // NOI18N
@@ -1278,6 +1283,23 @@ GridBagLayout layout = new GridBagLayout();
         SuaThongTinMonAn n = new SuaThongTinMonAn();
         n.setVisible(true);
     }//GEN-LAST:event_jButton35ActionPerformed
+    public static int trigialuong = 0;
+    public static String tenNV ="";
+    public static String maNV = "";
+    public static String CMND = "";
+    public static String SDT = "";
+    public static String Email= "";
+    public static String GioiTinh = "";
+    public static String NBD = "";
+    public static String NS = "";
+    
+    private void tbNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbNhanVienMouseClicked
+        int index = tbNhanVien.getSelectedRow();
+        if (index > -1) {
+            
+            
+        }
+    }//GEN-LAST:event_tbNhanVienMouseClicked
     
     /**
      * @param args the command line arguments

@@ -190,6 +190,7 @@ GridBagLayout layout = new GridBagLayout();
         HomeFun.setBackground(new java.awt.Color(61, 29, 61));
         HomeFun.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         HomeFun.setForeground(new java.awt.Color(255, 255, 255));
+        HomeFun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_home_40px_1.png"))); // NOI18N
         HomeFun.setText("Home");
         HomeFun.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         HomeFun.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -207,6 +208,7 @@ GridBagLayout layout = new GridBagLayout();
         MenuFun.setBackground(new java.awt.Color(61, 29, 61));
         MenuFun.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         MenuFun.setForeground(new java.awt.Color(255, 255, 255));
+        MenuFun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_restaurant_menu_40px.png"))); // NOI18N
         MenuFun.setText("Menu");
         MenuFun.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MenuFun.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -222,6 +224,7 @@ GridBagLayout layout = new GridBagLayout();
         function.add(MenuFun, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 130, 70));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_cafe_60px.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         function.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, 60));
@@ -229,6 +232,7 @@ GridBagLayout layout = new GridBagLayout();
         KhachHangFun.setBackground(new java.awt.Color(61, 29, 61));
         KhachHangFun.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         KhachHangFun.setForeground(new java.awt.Color(255, 255, 255));
+        KhachHangFun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_user_40px_2.png"))); // NOI18N
         KhachHangFun.setText("Customer");
         KhachHangFun.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         KhachHangFun.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -306,6 +310,7 @@ GridBagLayout layout = new GridBagLayout();
         welcome.setText("WELCOME");
         Home.add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, -10, 290, 80));
 
+        picture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cappuccino-cafe-cua-y.png"))); // NOI18N
         picture.setMaximumSize(new java.awt.Dimension(640, 500));
         picture.setPreferredSize(new java.awt.Dimension(680, 401));
         Home.add(picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 640, -1));
@@ -411,26 +416,7 @@ GridBagLayout layout = new GridBagLayout();
         jTable2.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "NAME", "QUANTITY", "PRICE"
@@ -528,6 +514,7 @@ GridBagLayout layout = new GridBagLayout();
         jTextField9.setForeground(new java.awt.Color(51, 51, 51));
 
         jButton41.setBackground(new java.awt.Color(0, 153, 153));
+        jButton41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_search_20px.png"))); // NOI18N
 
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
